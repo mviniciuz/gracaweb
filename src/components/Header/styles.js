@@ -9,66 +9,9 @@ export const Container = styled.header`
   flex: 1;
 `;
 
-export const Bar01 = styled.div`
+export const Content = styled.div`
   display: flex;
-  height: 40px;
-  width: 100%;
-  background:#FFD8CB;
-
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 7vw;
-`;
-
-export const SocialBar = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  height: 35px;
-  width: 150px;
-
-  a {
-    padding: 10px 10px;
-
-    &:hover {
-      position: relative;
-      transition: $animate;
-      transition-duration: 0.2s;
-      opacity: 0.4;
-      color: #C69077;
-    }
-  }
-
-`
-
-export const ConatactBar = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  height: 30px;
-  width: 150px;
-
-  strong {
-    color:#C69077;
-  }
-  a {
-    color:#C69077;
-
-    &:hover {
-      position: relative;
-      transition: $animate;
-      transition-duration: 0.2s;
-      opacity: 0.4;
-    }
-  }
-`;
-
-export const Bar02 = styled.div`
-  display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
@@ -78,13 +21,61 @@ export const Bar02 = styled.div`
     padding-right: 75px;
   }
 
-  height: 110px;
+  height: 190px;
   width: 100%;
   background:#ffffff;
 `;
 
+export const ContentSocial = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 130px;
+  width: 100%;
+`;
+
+export const Img = styled.img`
+  display: flex;
+
+  ${media.desktop}{
+    display: none;
+  }
+  height: 125px;
+  width: 100%;
+
+  padding-bottom: 5px;
+`;
+
+export const SocialBar = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-end;
+  align-items: center;
+  height: 35px;
+  width: 100%;
+  position:fixed;
+  padding-right: 16%;
+
+  a {
+    padding: 2px 2px;
+
+    &:hover {
+      position: relative;
+      transition: $animate;
+      transition-duration: 0.2s;
+      opacity: 0.7;
+    }
+
+    img {
+      height: 28px;
+      width: 28px;
+    }
+  }
+`
 export const Menu = styled.div`
   display: flex;
+  background: #e7e7e7;
   ${media.desktop} {
     display: none;
   }
@@ -93,14 +84,17 @@ export const Menu = styled.div`
   justify-content:center;
   align-items:stretch;
 
-  height: 80px;
-  width: 80%;
-  background: transparent;
+  height: 45px;
+  width: 100%;
+
+  padding-left: 16%;
+  padding-right: 16%;
+
 
   ul {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items:center;
     list-style-type: none;
   }
@@ -108,9 +102,8 @@ export const Menu = styled.div`
 
 export const ItemMenu = styled.li`
 
-  height: 35px;
-  padding: 4px;
-
+  height: 26px;
+  padding: 3px;
 
   display: flex;
   flex-flow: column nowrap;
@@ -118,17 +111,26 @@ export const ItemMenu = styled.li`
   align-items:center;
 
   strong {
-    font-size: 17px;
-    color: #C69077;
-    letter-spacing:1.2px;
+    font-size: 1.2em;
+    color: #646464;
+
+
+    &:hover {
+      position: relative;
+      transition: $animate;
+      transition-duration: 0.2s;
+      opacity: 1;
+      color: #007641;
+    }
   }
 
   &:hover {
     .bar-animation {
       display: flex;
-      height: 1px;
+      height: 2px;
       width: 100%;
-      background: #FFD8CB;
+      position: relative;
+      background: #007641;
       transition: $animate;
       transition-duration: 0.8s;
       opacity: 0.7;
@@ -163,6 +165,8 @@ export const ImgMenu = styled.img`
     display: flex;
   }
 `;
+
+
 
 
 

@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import Logo from '../../assets/logocolor.svg'
+import Logo from '../../assets/logoini.svg'
+import LogoFundacao from '../../assets/fundacao.svg'
 
 import NavBar from './NavBar/index';
 
-import { TiSocialFacebook, TiSocialInstagram } from 'react-icons/ti'
-import { AiOutlineWhatsApp } from 'react-icons/ai';
+import { TiSocialFacebook, TiSocialInstagram, TiSocialLinkedin } from 'react-icons/ti'
+import { AiOutlineInstagram } from 'react-icons/ai';
 import { MdReorder } from 'react-icons/md';
 
-import { Container, Bar01, SocialBar, Bar02, Menu, ItemMenu, ConatactBar, Button, ImgMenu } from './styles';
+import { Container, Content, ContentSocial, SocialBar, Menu, ItemMenu, Button, ImgMenu, Img } from './styles';
 
 function Header() {
-  const menu = ['Home', 'Sobre', 'Tratamentos', 'logo', 'Resultados', 'Equipe', 'Contatos'];
+  const menu = ['HOME', 'QUEM SOMOS', 'NOSSA EQUIPE', 'AREAS DE ATUAÇÃO', 'NOSSOS PRINCÍPIOS', 'NOTÍCIAS', 'REPONSABILIDADE', 'CONTATO'];
 
   const [visible, setVisible] = useState(false);
 
@@ -22,42 +23,44 @@ function Header() {
 
   return (
     <Container>
-      <Bar01>
-        <ConatactBar>
-          <strong>Ligar</strong><a href="tel:43999179080">(43) 99917-9080</a>
-        </ConatactBar>
-        <SocialBar>
-          <a href="https://linktr.ee/esteticapatriciabrasil" target="_blank" >
-            <AiOutlineWhatsApp color="#AD7256" size={23} />
-          </a>
-          <a href="https://www.instagram.com/esteticapatriciabrasil/" target="_blank" >
-            <TiSocialInstagram color="#AD7256" size={23} />
-          </a>
-          <a href="https://www.facebook.com/esteticapatriciabrasil/" target="_blank" >
-            <TiSocialFacebook color="#AD7256" size={23} />
-          </a>
-        </SocialBar>
-      </Bar01>
-      <Bar02>
+      <Content>
+        <ContentSocial>
+          <Img src={Logo} alt="logo do escritório" />
+          <SocialBar>
+            <a href="https://www.instagram.com/esteticapatriciabrasil/" target="_blank" >
+              <AiOutlineInstagram color="#939393" size={28} />
+            </a>
+            <a href="https://www.facebook.com/esteticapatriciabrasil/" target="_blank" >
+              <TiSocialFacebook color="#939393" size={28} />
+            </a>
+            <a href="https://www.facebook.com/esteticapatriciabrasil/" target="_blank" >
+              <TiSocialLinkedin color="#939393" size={28} />
+            </a>
+            <a href="https://www.facebook.com/esteticapatriciabrasil/" target="_blank" >
+              <img src={LogoFundacao} alt="logo da fundação graça" />
+            </a>
+          </SocialBar>
+        </ContentSocial>
+
         <Button type="button" onClick={handleVisible}>
           <MdReorder color="#AD7256" size={35} />
         </Button>
+
         <Menu>
           <ul>
             {menu.map(item => (
-              item !== 'logo' ?
-                <ItemMenu>
-                  <Link to={item === 'Home' ? "/" : item}>
-                    <strong>{item}</strong>
-                  </Link>
-                  <div class="bar-animation"></div>
-                </ItemMenu>
-                : <img src={Logo} alt="logo da patricia" />
-            ))}
-          </ul>
-        </Menu>
-        <ImgMenu src={Logo} alt="logo da patricia" />
-      </Bar02>
+              <ItemMenu>
+                <Link to={item === 'Home' ? "/" : item}>
+                  <strong>{item}</strong>
+                </Link>
+                <div class="bar-animation"></div>
+              </ItemMenu>
+            ))
+            }
+          </ul >
+        </Menu >
+        <ImgMenu src={Logo} alt="logo do escritório" />
+      </Content >
       {visible ? <NavBar itemsMenu={menu} setShow={setVisible} /> : null}
     </Container >
   );

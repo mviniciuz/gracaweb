@@ -4,11 +4,11 @@ import { createGlobalStyle } from 'styled-components';
 
 import 'react-perfect-scrollbar/dist/css/styles.css';
 
-import MontserratFont from './Fonts';
+import Fonts from './Fonts';
 
 export default createGlobalStyle`
 
-  ${MontserratFont}
+  ${Fonts}
 
   * {
     margin: 0;
@@ -26,7 +26,7 @@ export default createGlobalStyle`
     -webkit-font-somoothing: antialiased;
   }
   body, input, button {
-    font: 14px 'Montserrat';
+    font: 62.6% 'Roboto', sans-serif;
   }
 
   a {
@@ -39,6 +39,6 @@ export default createGlobalStyle`
     cursor: pointer;
   }
   strong {
-    font: 17px 'Montserrat', sans-serif;
+    font: 62.6% 'Roboto', sans-serif;
   }
 `;
