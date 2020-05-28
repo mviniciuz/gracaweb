@@ -13,14 +13,13 @@ function NavBar({ itemsMenu, setShow }) {
     <Container>
       {
         itemsMenu.map(item => (
-          item !== 'logo' ?
-            <MenuItems>
-              <button type="button" onClick={handleVisible}>
-                <Link to={item === "Home" ? "/" : item}>
-                  <strong>{item}</strong>
-                </Link>
-              </button>
-            </MenuItems> : null
+          <MenuItems>
+            <button type="button" onClick={handleVisible}>
+              <Link to={item === "Home" ? "/" : item}>
+                <strong>{item}</strong>
+              </Link>
+            </button>
+          </MenuItems>
         ))
       }
     </Container>

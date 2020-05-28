@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const media = {
-  desktop: '@media(max-width: 850px)'
+  desktop: '@media(max-width: 900px)'
 }
 
 export const Container = styled.header`
@@ -16,12 +16,15 @@ export const Content = styled.div`
   align-items: center;
 
   ${media.desktop}{
-    justify-content: space-between;
-    padding-left: 20px;
-    padding-right: 75px;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    padding-right: 10%;
+    padding-left: 5%;
   }
 
-  height: 190px;
+  height: 175px;
   width: 100%;
   background:#ffffff;
 `;
@@ -38,6 +41,7 @@ export const ContentSocial = styled.div`
 export const Img = styled.img`
   display: flex;
 
+
   ${media.desktop}{
     display: none;
   }
@@ -48,13 +52,19 @@ export const Img = styled.img`
 `;
 
 export const SocialBar = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content:flex-end;
-  align-items: center;
+  position: absolute;
   height: 35px;
   width: 100%;
-  position:fixed;
+
+  ${media.desktop}{
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end;
+    align-items: center;
+    position:relative;
+    left: 0;
+  }
+
   padding-right: 16%;
 
   a {
@@ -73,6 +83,7 @@ export const SocialBar = styled.div`
     }
   }
 `
+
 export const Menu = styled.div`
   display: flex;
   background: #e7e7e7;
@@ -90,7 +101,6 @@ export const Menu = styled.div`
   padding-left: 16%;
   padding-right: 16%;
 
-
   ul {
     display: flex;
     flex-direction: row;
@@ -102,12 +112,12 @@ export const Menu = styled.div`
 
 export const ItemMenu = styled.li`
 
-  height: 26px;
-  padding: 3px;
+  height: 25px;
+  padding-top: 5px;
 
   display: flex;
   flex-flow: column nowrap;
-  justify-content:space-between;
+  justify-content:space-around;
   align-items:center;
 
   strong {
@@ -163,6 +173,7 @@ export const ImgMenu = styled.img`
 
   ${media.desktop}{
     display: flex;
+    height: 250px;
   }
 `;
 

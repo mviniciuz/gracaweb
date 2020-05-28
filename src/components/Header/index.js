@@ -24,26 +24,32 @@ function Header() {
   return (
     <Container>
       <Content>
+
+
+        <ImgMenu src={Logo} alt="logo do escritório" />
+
         <ContentSocial>
           <Img src={Logo} alt="logo do escritório" />
           <SocialBar>
-            <a href="https://www.instagram.com/esteticapatriciabrasil/" target="_blank" >
+            <a href="https://www.instagram.com/gracaadvogados/" target="_blank" >
               <AiOutlineInstagram color="#939393" size={28} />
             </a>
-            <a href="https://www.facebook.com/esteticapatriciabrasil/" target="_blank" >
+            <a href="https://www.facebook.com/graca.advogados/" target="_blank" >
               <TiSocialFacebook color="#939393" size={28} />
             </a>
-            <a href="https://www.facebook.com/esteticapatriciabrasil/" target="_blank" >
+            <a href="https://www.linkedin.com/company/gra-a-advogados-associados/about/" target="_blank" >
               <TiSocialLinkedin color="#939393" size={28} />
             </a>
-            <a href="https://www.facebook.com/esteticapatriciabrasil/" target="_blank" >
+            <a href="" target="_blank" >
               <img src={LogoFundacao} alt="logo da fundação graça" />
             </a>
           </SocialBar>
+
+
         </ContentSocial>
 
         <Button type="button" onClick={handleVisible}>
-          <MdReorder color="#AD7256" size={35} />
+          <MdReorder color="#007641" size={35} />
         </Button>
 
         <Menu>
@@ -59,9 +65,9 @@ function Header() {
             }
           </ul >
         </Menu >
-        <ImgMenu src={Logo} alt="logo do escritório" />
+
+        {visible ? <NavBar itemsMenu={menu} setShow={setVisible} /> : null}
       </Content >
-      {visible ? <NavBar itemsMenu={menu} setShow={setVisible} /> : null}
     </Container >
   );
 }
