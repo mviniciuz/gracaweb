@@ -8,12 +8,11 @@ function PhotoText({ title, text, photo, inverse }) {
   return (
     <Container firstPhoto={!inverse}>
 
-
-      <div className="photo flex-column">
+      <div className="photo">
         <img src={photo} />
       </div>
 
-      <div className="text flex-column">
+      <div className="text">
         <div className="box-text">
           <h1>{title}</h1>
           <p>{text.p1 ? text.p1 : ''}</p>

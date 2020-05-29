@@ -19,16 +19,13 @@ export const Container = styled.div`
     flex-direction: ${props => (props.firstPhoto ? 'column' : 'column-reverse')};
   }
 
-  .flex-column {
+  .photo {
     display: flex;
     flex: 1;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-  }
+    align-items: ${props => (props.firstPhoto ? 'flex-end' : 'flex-start')};
 
-  .photo {
-    align-items: ${props => props.firstPhoto ? 'flex-end' : 'center'};
     height: 100vh;
     background: transparent;
 
@@ -36,33 +33,33 @@ export const Container = styled.div`
       align-items: center;
       height: 100%;
       width: 100vw;
-
     }
 
     img {
-      height: 70%;
+      height: auto;
+      width: 65%;
     }
   }
 
   .text {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     height: 100vh;
     background: transparent;
-
-    ${media.desktop}{
-      height: 100%;
-      width: 100vw;
-    }
 
     h1 {
       text-align: left;
       font-size: 3.0em;
       color: #202020;
-
-      padding-left: ${props => props.firstPhoto ? '5%' : '20%'};
-      padding-right: ${props => props.firstPhoto ? '20%' : '5%'};
+      padding-left: ${props => (props.firstPhoto ? '5%' : '35%')};
+      padding-right: ${props => (props.firstPhoto ? '35%' : '5%')};
       ${media.desktop}{
-        padding-left: 12%;
-        padding-right: 12%;
+        padding-left: 5%;
+        padding-right: 5%;
       }
     }
 
@@ -71,13 +68,12 @@ export const Container = styled.div`
       font-size: 1.4em;
       color: #202020;
 
-      padding-top: 15px;
-      padding-left: ${props => props.firstPhoto ? '5%' : '20%'};
-      padding-right: ${props => props.firstPhoto ? '20%' : '5%'};
-
+      padding-top: 20px;
+      padding-left: ${props => (props.firstPhoto ? '5%' : '35%')};
+      padding-right: ${props => (props.firstPhoto ? '35%' : '5%')};
       ${media.desktop}{
-        padding-left: 12%;
-        padding-right: 12%;
+        padding-left: 5%;
+        padding-right: 5%;
       }
     }
   }
