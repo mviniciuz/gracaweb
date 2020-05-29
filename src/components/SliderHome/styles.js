@@ -5,7 +5,6 @@ export const Container = styled.div`
   width: 100%;
   border:0;
 
-
   video {
      height: auto;
      width: 100%;

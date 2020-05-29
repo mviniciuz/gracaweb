@@ -19,7 +19,6 @@ export const Content = styled.div`
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-
     padding-right: 10%;
     padding-left: 5%;
   }
@@ -40,21 +39,26 @@ export const ContentSocial = styled.div`
 
 export const Img = styled.img`
   display: flex;
-
-
   ${media.desktop}{
     display: none;
   }
   height: 125px;
   width: 100%;
-
   padding-bottom: 5px;
 `;
 
 export const SocialBar = styled.div`
+    flex:1;
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end;
+    align-items: center;
+
   position: absolute;
+  left: 70%;
+
   height: 35px;
-  width: 100%;
+
 
   ${media.desktop}{
     display: flex;

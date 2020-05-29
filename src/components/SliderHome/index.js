@@ -9,7 +9,7 @@ import { Container } from './styles';
 function SliderHome() {
   return (
     <Container>
-      <video autoplay="autoplay" loop >
+      <video autoplay="autoplay" muted="muted" loop >
         <source src={video} type='video/mp4' />
       </video>
     </Container >

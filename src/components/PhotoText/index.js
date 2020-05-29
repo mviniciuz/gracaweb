@@ -1,23 +1,31 @@
-import React, { useEffect } from 'react';
-
-import { Container, Content } from './styles';
-
-function PhotoText({ photo, text, ordemphototexto }) {
+import React from 'react';
 
 
+import { Container, Moldure } from './styles';
+
+function PhotoText({ title, text, photo, inverse }) {
 
   return (
-    <Container>
-      <Content firstPhoto={ordemphototexto}>
-        <div className="photo">
-          <p>photo</p>
+    <Container firstPhoto={!inverse}>
+
+
+      <div className="photo flex-column">
+        <img src={photo} />
+      </div>
+
+      <div className="text flex-column">
+        <div className="box-text">
+          <h1>{title}</h1>
+          <p>{text.p1 ? text.p1 : ''}</p>
+          <p>{text.p2 ? text.p2 : ''}</p>
+          <p>{text.p3 ? text.p3 : ''}</p>
         </div>
-        <div className="text">
-          <p>{text}</p>
-        </div>
-      </Content>
-    </Container>
+      </div>
+
+    </Container >
+
   );
 }
+
 
 export default PhotoText;
