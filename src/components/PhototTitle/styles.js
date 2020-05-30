@@ -17,7 +17,7 @@ export const Container = styled.div`
 
   flex-direction: ${props => (props.firstPhoto ? 'row' : 'row-reverse')};
   ${media.desktop} {
-    flex-direction: ${props => (props.firstPhoto ? 'column-reverse' : 'column')};
+    flex-direction: ${props => (props.firstPhoto ? 'column' : 'column-reverse')};
   }
 
   .photo {
@@ -31,6 +31,7 @@ export const Container = styled.div`
     background: transparent;
 
     ${media.desktop}{
+
       align-items: center;
       height: 100%;
       width: 100vw;
@@ -49,37 +50,45 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
 
+    align-self: flex-start;
+
     height: 100vh;
-    background: transparent;
 
     h1 {
+      padding-top: 30px;
+      padding-bottom: 20px;
       text-align: left;
       font-size: 3.0em;
       color: #202020;
-      padding-left: ${props => (props.firstPhoto ? '5%' : '35%')};
-      padding-right: ${props => (props.firstPhoto ? '35%' : '5%')};
-      ${media.desktop}{
-        padding-left: 5%;
-        padding-right: 5%;
-      }
+      min-width: 300px;
     }
 
     p {
-      text-align: justify;
-      font-size: 1.4em;
-      color: #202020;
+      text-align: left;
+      font-size: 1.7em;
+      color: #4C6158;
+      font-weight: bold;
+      padding-left: 10px;
 
-      line-height:1.3em;
-
-      padding-top: 20px;
-      padding-left: ${props => (props.firstPhoto ? '5%' : '35%')};
-      padding-right: ${props => (props.firstPhoto ? '35%' : '5%')};
-      ${media.desktop}{
-        padding-left: 5%;
-        padding-right: 5%;
-      }
     }
   }
 
+  .title {
+    background-color: transparent;
+    display: flex;
+    flex:1;
+
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    height: 35px;
+    min-width: 300px;
+
+  }
+  .box-text {
+    padding-left: 15%;
+    padding-bottom: 30px;
+  }
 `;
 
