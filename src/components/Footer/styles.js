@@ -12,7 +12,7 @@ export const Container = styled.div`
   align-items: stretch;
   height: 40vh;
   ${media.desktop} {
-    height: 90vh;
+    height: 80vh;
   }
 
   .content {
@@ -38,7 +38,7 @@ export const Container = styled.div`
       align-items: center;
 
       img {
-        width: 330px;
+        width: 75% ;
         height: auto;
       }
     }
@@ -50,24 +50,22 @@ export const Container = styled.div`
       justify-content: center;
       align-items: center;
 
-     ${media.desktop}{
-        padding-top: 20%;
+      ${media.desktop}{
+        padding-top: 5%;
         padding-left:10%;
-     }
-
-
+      }
 
       .item {
         display: flex;
+
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
 
-        height: 25%;
         width: 90%;
 
         min-width: 350px;
-        margin-top: 1px;
+        margin-bottom: 15px;
 
         p {
           font-size: 1.3em;
@@ -88,7 +86,7 @@ export const Container = styled.div`
       flex:1;
 
       img {
-        width: 200px;
+        width: 50% ;
         height: auto;
       }
     }

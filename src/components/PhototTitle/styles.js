@@ -39,7 +39,7 @@ export const Container = styled.div`
 
     img {
       height: auto;
-      width: 65%;
+      width: 60%;
     }
   }
 
@@ -65,7 +65,7 @@ export const Container = styled.div`
 
     p {
       text-align: left;
-      font-size: 1.7em;
+      font-size: 1.5em;
       color: #4C6158;
       font-weight: bold;
       padding-left: 10px;

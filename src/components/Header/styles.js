@@ -11,13 +11,14 @@ export const Container = styled.header`
 
 export const Content = styled.div`
   display: flex;
+  flex:1;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
   ${media.desktop}{
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     padding-right: 10%;
     padding-left: 5%;
@@ -26,12 +27,25 @@ export const Content = styled.div`
   height: 175px;
   width: 100%;
   background:#ffffff;
+
+  .social {
+    position: absolute;
+    left: 73%;
+
+    ${media.desktop}{
+      left: 0;
+      position:static;
+
+
+    }
+
+  }
 `;
 
 export const ContentSocial = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   height: 130px;
   width: 100%;
@@ -46,47 +60,6 @@ export const Img = styled.img`
   width: 100%;
   padding-bottom: 5px;
 `;
-
-export const SocialBar = styled.div`
-    flex:1;
-    display: flex;
-    flex-direction: row;
-    justify-content:flex-end;
-    align-items: center;
-
-  position: absolute;
-  left: 70%;
-
-  height: 35px;
-
-
-  ${media.desktop}{
-    display: flex;
-    flex-direction: row;
-    justify-content:flex-end;
-    align-items: center;
-    position:relative;
-    left: 0;
-  }
-
-  padding-right: 16%;
-
-  a {
-    padding: 2px 2px;
-
-    &:hover {
-      position: relative;
-      transition: $animate;
-      transition-duration: 0.2s;
-      opacity: 0.7;
-    }
-
-    img {
-      height: 28px;
-      width: 28px;
-    }
-  }
-`
 
 export const Menu = styled.div`
   display: flex;

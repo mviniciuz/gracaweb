@@ -2,6 +2,7 @@ import React from 'react';
 
 import Logo from '../../assets/footer/logo.png';
 import selos from '../../assets/footer/selos.png';
+import SocialBar from '../../components/SocialBar';
 
 import { MdLocalPhone, MdMailOutline } from 'react-icons/md';
 import { FaMapMarkerAlt } from 'react-icons/fa';
@@ -29,6 +30,10 @@ function Footer() {
             <FaMapMarkerAlt size={25} color="#568A74" />
             <p>Rua Ana Néri,  166- 86050-490 – Londrina-PR <br /> Brasília/DF – Curitiba/PR – São Paulo/SP </p>
           </div>
+          <div className="item">
+            <SocialBar />
+          </div>
+
 
         </div>
         <div className="selos" >

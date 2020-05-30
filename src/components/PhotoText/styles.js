@@ -38,7 +38,7 @@ export const Container = styled.div`
 
     img {
       height: auto;
-      width: 65%;
+      width: 60%;
     }
   }
 
