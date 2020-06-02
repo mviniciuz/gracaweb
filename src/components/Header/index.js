@@ -39,7 +39,11 @@ function Header() {
           <ul>
             {menu.map(item => (
               <ItemMenu>
-                <Link to={item === 'Home' ? "/" : item}>
+                <Link to={
+                  item === 'HOME' ? "/" :
+                    item === 'QUEM SOMOS' ? "/about" :
+                      item === 'CONTATO' ? "/contact" : item
+                }>
                   <strong>{item}</strong>
                 </Link>
                 <div class="bar-animation"></div>

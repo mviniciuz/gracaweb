@@ -15,7 +15,11 @@ function NavBar({ itemsMenu, setShow }) {
         itemsMenu.map(item => (
           <MenuItems>
             <button type="button" onClick={handleVisible}>
-              <Link to={item === "Home" ? "/" : item}>
+              <Link to={
+                item === 'HOME' ? "/" :
+                  item === 'QUEM SOMOS' ? "/about" :
+                    item === 'CONTATO' ? "/contact" : item
+              }>             >
                 <strong>{item}</strong>
               </Link>
             </button>

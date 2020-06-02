@@ -6,6 +6,10 @@ import 'react-perfect-scrollbar/dist/css/styles.css';
 
 import Fonts from './Fonts';
 
+const media = {
+  desktop: '@media(max-width: 900px)'
+}
+
 export default createGlobalStyle`
 
   ${Fonts}
@@ -26,7 +30,11 @@ export default createGlobalStyle`
     -webkit-font-somoothing: antialiased;
   }
   body, input, button {
-    font: 62.6% 'Roboto', sans-serif;
+    font: 62.5% 'Roboto', sans-serif;
+
+    ${media.desktop} {
+      font: 40% 'Roboto', sans-serif;
+    }
   }
 
   a {
@@ -37,8 +45,5 @@ export default createGlobalStyle`
   }
   button {
     cursor: pointer;
-  }
-  strong {
-    font: 62.6% 'Roboto', sans-serif;
   }
 `;

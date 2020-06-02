@@ -58,14 +58,14 @@ export const Container = styled.div`
       padding-top: 30px;
       padding-bottom: 20px;
       text-align: left;
-      font-size: 3.0em;
+      font-size: 2.0rem;
       color: #202020;
       min-width: 300px;
     }
 
     p {
       text-align: left;
-      font-size: 1.5em;
+      font-size: 0.8rem;
       color: #4C6158;
       font-weight: bold;
       padding-left: 10px;

@@ -3,10 +3,10 @@ import React from 'react';
 
 import { Container, Moldure } from './styles';
 
-function PhotoText({ title, text, photo, inverse, color }) {
+function PhotoText({ title, text, photo, inverse, color, tamHeight }) {
 
   return (
-    <Container firstPhoto={!inverse} color={color}>
+    <Container firstPhoto={!inverse} color={color} tamHeight={tamHeight}>
 
       <div className="photo">
         <img src={photo} />

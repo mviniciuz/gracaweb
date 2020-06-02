@@ -56,7 +56,7 @@ export const Img = styled.img`
   ${media.desktop}{
     display: none;
   }
-  height: 125px;
+  height: 135px;
   width: 100%;
   padding-bottom: 5px;
 `;
@@ -98,7 +98,7 @@ export const ItemMenu = styled.li`
   align-items:center;
 
   strong {
-    font-size: 1.2em;
+    font-size: 0.7rem;
     color: #646464;
 
 

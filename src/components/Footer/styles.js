@@ -68,7 +68,7 @@ export const Container = styled.div`
         margin-bottom: 15px;
 
         p {
-          font-size: 1.3em;
+          font-size: 0.8rem;
           font-weight:bold;
           color: #525252;
           padding-left: 10px;
@@ -80,13 +80,13 @@ export const Container = styled.div`
       display: flex;
       flex:1;
       flex-direction: column;
-      justify-content: flex-end;
+      justify-content: center;
       align-items: center;
 
       flex:1;
 
       img {
-        width: 50% ;
+        width: 35% ;
         height: auto;
       }
     }

@@ -27,7 +27,7 @@ export const MenuItems = styled.div`
 
   strong {
     color:#646464;
-    font-size: 1.3em;
+    font-size: 0.7rem;
 
     &:hover {
       position: relative;

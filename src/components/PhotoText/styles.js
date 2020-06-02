@@ -9,16 +9,19 @@ const media = {
 export const Container = styled.div`
   flex: 1;
   display: flex;
+  flex-direction: ${props => (props.firstPhoto ? 'row' : 'row-reverse')};
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: ${props => (props.tamHeight ? props.tamHeight : '100vh')};
   width: 100%;
-  background-color: ${props => props.color};
 
-  flex-direction: ${props => (props.firstPhoto ? 'row' : 'row-reverse')};
   ${media.desktop} {
-    flex-direction: ${props => (props.firstPhoto ? 'column-reverse' : 'column')};
+    flex-direction: column-reverse;
+    height: 105vh;
+    width: 100vw;
   }
+
+  background-color: ${props => props.color};
 
   .photo {
     display: flex;
@@ -27,18 +30,16 @@ export const Container = styled.div`
     justify-content: center;
     align-items: ${props => (props.firstPhoto ? 'flex-end' : 'flex-start')};
 
-    height: 100vh;
+    height: ${props => (props.tamHeight ? props.tamHeight : '100vh')};
     background: transparent;
 
     ${media.desktop}{
       align-items: center;
-      height: 100%;
-      width: 100vw;
     }
 
     img {
       height: auto;
-      width: 60%;
+      width: 65%;
     }
   }
 
@@ -49,12 +50,12 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
 
-    height: 100vh;
+    height: ${props => (props.tamHeight ? props.tamHeight : '100vh')};
     background: transparent;
 
     h1 {
       text-align: left;
-      font-size: 3.0em;
+      font-size: 2.0rem;
       color: #202020;
       padding-left: ${props => (props.firstPhoto ? '5%' : '35%')};
       padding-right: ${props => (props.firstPhoto ? '35%' : '5%')};
@@ -66,7 +67,7 @@ export const Container = styled.div`
 
     p {
       text-align: justify;
-      font-size: 1.4em;
+      font-size: 0.9rem;
       color: #202020;
 
       line-height:1.3em;
@@ -75,6 +76,7 @@ export const Container = styled.div`
       padding-left: ${props => (props.firstPhoto ? '5%' : '35%')};
       padding-right: ${props => (props.firstPhoto ? '35%' : '5%')};
       ${media.desktop}{
+        font-size: 0.8rem;
         padding-left: 5%;
         padding-right: 5%;
       }

@@ -8,6 +8,7 @@ import PhotoTitle from '../../components/PhototTitle';
 import home01 from '../../assets/home/home01.png';
 import home02 from '../../assets/home/home02.png';
 
+
 import { Container, Content } from './styles';
 
 export default function Home() {
