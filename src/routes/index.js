@@ -5,6 +5,8 @@ import Route from './Route';
 import Home from '../pages/Home';
 import About from '../pages/About';
 import Contact from '../pages/Contact';
+import Team from '../pages/Team';
+import Area from '../pages/Areas';
 
 export default function Routes() {
   return (
@@ -12,6 +14,8 @@ export default function Routes() {
       <Route path="/" exact component={Home} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
+      <Route path="/team" component={Team} />
+      <Route path="/area" component={Area} />
     </Switch>
   );
 }

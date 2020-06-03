@@ -17,7 +17,7 @@ export const Container = styled.div`
 
   ${media.desktop} {
     flex-direction: column-reverse;
-    height: 105vh;
+    height: 100vh;
     width: 100vw;
   }
 

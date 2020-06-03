@@ -1,13 +1,13 @@
 import React from 'react';
-
-import { Container, Moldure } from './styles';
-
 import { AiOutlinePlusCircle } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
-function PhotoText({ title, text, photo, inverse, color }) {
+import { Container } from './styles';
+
+function PhotoText({ title, text, photo, inverse, color, tamHeight }) {
 
   return (
-    <Container firstPhoto={!inverse} color={color}>
+    <Container firstPhoto={!inverse} color={color} tamHeight={tamHeight}>
 
       <div className="photo">
         <img src={photo} />
@@ -19,35 +19,51 @@ function PhotoText({ title, text, photo, inverse, color }) {
 
           <div className="title">
             <AiOutlinePlusCircle size={25} color="#4C6158" />
-            <p>{text.p1 ? text.p1 : ''}</p>
+            <a href="/area#empresarial">
+              <p>{text.p1 ? text.p1 : ''}</p>
+            </a>
           </div>
           <div className="title">
             <AiOutlinePlusCircle size={25} color="#4C6158" />
-            <p>{text.p2 ? text.p2 : ''}</p>
+            <a href="/area#civil">
+              <p>{text.p2 ? text.p2 : ''}</p>
+            </a>
           </div>
           <div className="title">
             <AiOutlinePlusCircle size={25} color="#4C6158" />
-            <p>{text.p3 ? text.p3 : ''}</p>
+            <a href="/area#trabalhista">
+              <p>{text.p3 ? text.p3 : ''}</p>
+            </a>
           </div>
           <div className="title">
             <AiOutlinePlusCircle size={25} color="#4C6158" />
-            <p>{text.p4 ? text.p4 : ''}</p>
+            <a href="/area#eleitoral">
+              <p>{text.p4 ? text.p4 : ''}</p>
+            </a>
           </div>
           <div className="title">
             <AiOutlinePlusCircle size={25} color="#4C6158" />
-            <p>{text.p5 ? text.p5 : ''}</p>
+            <a href="/area#digital">
+              <p>{text.p5 ? text.p5 : ''}</p>
+            </a>
           </div>
           <div className="title">
             <AiOutlinePlusCircle size={25} color="#4C6158" />
-            <p>{text.p6 ? text.p6 : ''}</p>
+            <a href="/area#tributario">
+              <p>{text.p6 ? text.p6 : ''}</p>
+            </a>
           </div>
           <div className="title">
             <AiOutlinePlusCircle size={25} color="#4C6158" />
-            <p>{text.p7 ? text.p7 : ''}</p>
+            <a href="/area#penal">
+              <p>{text.p7 ? text.p7 : ''}</p>
+            </a>
           </div>
           <div className="title">
             <AiOutlinePlusCircle size={25} color="#4C6158" />
-            <p>{text.p8 ? text.p8 : ''}</p>
+            <a href="/area#administrativo">
+              <p>{text.p8 ? text.p8 : ''}</p>
+            </a>
           </div>
         </div>
       </div>

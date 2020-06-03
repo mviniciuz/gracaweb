@@ -11,12 +11,13 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: ${props => (props.tamHeight ? props.tamHeight : '100vh')};
   width: 100%;
   background-color: ${props => props.color};
 
   flex-direction: ${props => (props.firstPhoto ? 'row' : 'row-reverse')};
   ${media.desktop} {
+    height: 100vh;
     flex-direction: ${props => (props.firstPhoto ? 'column' : 'column-reverse')};
   }
 
@@ -27,7 +28,7 @@ export const Container = styled.div`
     justify-content: center;
     align-items: ${props => (props.firstPhoto ? 'flex-end' : 'flex-start')};
 
-    height: 100vh;
+    height: ${props => (props.tamHeight ? props.tamHeight : '100vh')};
     background: transparent;
 
     ${media.desktop}{
@@ -52,7 +53,7 @@ export const Container = styled.div`
 
     align-self: flex-start;
 
-    height: 100vh;
+    height: ${props => (props.tamHeight ? props.tamHeight : '100vh')};
 
     h1 {
       padding-top: 30px;

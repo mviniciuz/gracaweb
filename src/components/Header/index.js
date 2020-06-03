@@ -42,7 +42,9 @@ function Header() {
                 <Link to={
                   item === 'HOME' ? "/" :
                     item === 'QUEM SOMOS' ? "/about" :
-                      item === 'CONTATO' ? "/contact" : item
+                      item === 'CONTATO' ? "/contact" :
+                        item === 'NOSSA EQUIPE' ? "/team" :
+                          item === 'AREAS DE ATUAÇÃO' ? "/area" : item
                 }>
                   <strong>{item}</strong>
                 </Link>
