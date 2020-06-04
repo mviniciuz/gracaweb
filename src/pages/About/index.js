@@ -135,6 +135,7 @@ function About() {
       />
 
       <PhotoText
+        id="reconhecimento"
         title="Reconhecimento"
         text={text03}
         photo={sobre03}

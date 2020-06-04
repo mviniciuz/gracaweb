@@ -83,7 +83,7 @@ export const Container = styled.div`
 
         img {
           height: auto;
-          width: 30%;
+          width: 35%;
         }
         h2 {
           text-align: justify;

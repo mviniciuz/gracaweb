@@ -20,7 +20,10 @@ function NavBar({ itemsMenu, setShow }) {
                   item === 'QUEM SOMOS' ? "/about" :
                     item === 'CONTATO' ? "/contact" :
                       item === 'NOSSA EQUIPE' ? "/team" :
-                        item === 'AREAS DE ATUAÇÃO' ? "/area" : item
+                        item === 'AREAS DE ATUAÇÃO' ? "/area" :
+                          item === 'NOSSOS PRINCÍPIOS' ? "/principle" :
+                            item === 'NOTÍCIAS' ? "/" :
+                              item === 'RESPONSABILIDADE' ? "/social" : item
               }>
                 <strong>{item}</strong>
               </Link>

@@ -10,7 +10,7 @@ import SocialBar from '../SocialBar/index';
 import { Container, Content, ContentSocial, Menu, ItemMenu, Button, ImgMenu, Img } from './styles';
 
 function Header() {
-  const menu = ['HOME', 'QUEM SOMOS', 'NOSSA EQUIPE', 'AREAS DE ATUAÇÃO', 'NOSSOS PRINCÍPIOS', 'NOTÍCIAS', 'REPONSABILIDADE', 'CONTATO'];
+  const menu = ['HOME', 'QUEM SOMOS', 'NOSSA EQUIPE', 'AREAS DE ATUAÇÃO', 'NOSSOS PRINCÍPIOS', 'NOTÍCIAS', 'RESPONSABILIDADE', 'CONTATO'];
 
   const [visible, setVisible] = useState(false);
 
@@ -22,7 +22,6 @@ function Header() {
     <Container>
       <Content>
         <ImgMenu src={Logo} alt="logo do escritório" />
-
         <ContentSocial>
           <Img src={Logo} alt="logo do escritório" />
 
@@ -44,7 +43,11 @@ function Header() {
                     item === 'QUEM SOMOS' ? "/about" :
                       item === 'CONTATO' ? "/contact" :
                         item === 'NOSSA EQUIPE' ? "/team" :
-                          item === 'AREAS DE ATUAÇÃO' ? "/area" : item
+                          item === 'AREAS DE ATUAÇÃO' ? "/area" :
+                            item === 'NOSSOS PRINCÍPIOS' ? "/principle" :
+                              item === 'NOTÍCIAS' ? "/" :
+
+                                item === 'RESPONSABILIDADE' ? "/social" : item
                 }>
                   <strong>{item}</strong>
                 </Link>

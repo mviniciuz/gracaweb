@@ -7,6 +7,8 @@ import About from '../pages/About';
 import Contact from '../pages/Contact';
 import Team from '../pages/Team';
 import Area from '../pages/Areas';
+import Principle from '../pages/Principle';
+import Social from '../pages/Social';
 
 export default function Routes() {
   return (
@@ -16,6 +18,8 @@ export default function Routes() {
       <Route path="/contact" component={Contact} />
       <Route path="/team" component={Team} />
       <Route path="/area" component={Area} />
+      <Route path="/principle" component={Principle} />
+      <Route path="/social" component={Social} />
     </Switch>
   );
 }

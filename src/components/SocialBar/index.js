@@ -19,7 +19,7 @@ function SocialBar() {
       <a href="https://www.linkedin.com/company/gra-a-advogados-associados/about/" target="_blank" >
         <TiSocialLinkedin color="#939393" size={30} />
       </a>
-      <a href="" target="_blank" >
+      <a href="/social" target="_parent">
         <img src={LogoFundacao} alt="logo da fundação graça" />
       </a>
     </Container>

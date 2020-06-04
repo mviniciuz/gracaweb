@@ -14,9 +14,9 @@ function PhotoText({ title, text, photo, inverse, color, tamHeight, id }) {
       <div className="text">
         <div className="box-text">
           <h1>{title}</h1>
-          <p>{text.p1 ? text.p1 : ''}</p>
-          <p>{text.p2 ? text.p2 : ''}</p>
-          <p>{text.p3 ? text.p3 : ''}</p>
+          <p>{text.p1 ? text.p1 : null}</p>
+          <p>{text.p2 ? text.p2 : null}</p>
+          <p>{text.p3 ? text.p3 : null}</p>
         </div>
       </div>
     </Container >

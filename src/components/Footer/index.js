@@ -37,7 +37,9 @@ function Footer() {
 
         </div>
         <div className="selos" >
-          <img src={selos} />
+          <a href="/about#reconhecimento" target="_parent">
+            <img src={selos} />
+          </a>
         </div>
       </div>
       <div className="final" />
