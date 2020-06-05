@@ -11,7 +11,6 @@ export const Container = styled.div`
     height:140%;
   }
 
-
   .content {
     display:flex;
     flex-direction: column;
@@ -51,7 +50,7 @@ export const Container = styled.div`
     }
 
     .box-item{
-      padding-top: 20px;
+      padding-top: 30px;
       padding-left: 20px;
       padding-right: 20px;
       display: flex;
