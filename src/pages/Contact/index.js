@@ -50,11 +50,17 @@ function Contact() {
               <SocialBar />
             </div>
           </div>
+
         </div>
       </div>
+
+      <h1>TRABALHE CONOSCO</h1>
+
       <div className="content-trabalhe">
-        <h1>TRABALHE CONOSCO</h1>
+
+
         <div className="trabalhe-conosco">
+
           <div className="form-contato">
             <Form onSubmit={handleSubimit}>
               <Input name="name" placeholder="* Nome" />
@@ -64,10 +70,13 @@ function Contact() {
               <button type="submit"><p>ENVIAR</p></button>
             </Form>
           </div>
-          <div className="trabalhe-photo">
-            <img src={contact02} alt="foto trabalhe conosco" />
-          </div>
         </div>
+
+        <div className="trabalhe-photo">
+          <img src={contact02} />
+        </div>
+
+
       </div>
     </Container>
   );

@@ -62,6 +62,8 @@ export const Container = styled.div`
         justify-content: flex-start;
         align-items: center;
 
+
+
         width: 90%;
 
         min-width: 350px;
@@ -83,10 +85,12 @@ export const Container = styled.div`
       justify-content: center;
       align-items: center;
 
-      flex:1;
+      ${media.desktop} {
+        justify-content: center;
+      }
 
       img {
-        width: 35% ;
+        width: 40% ;
         height: auto;
       }
     }
