@@ -19,7 +19,7 @@ function PhotoText({ title, text, photo, inverse, color, tamHeight }) {
 
           <div className="title">
             <AiOutlinePlusCircle size={25} color="#4C6158" />
-            <a href="/area#empresarial" target="_parent">
+            <a href="/area#administrativo" target="_parent">
               <p>{text.p1 ? text.p1 : ''}</p>
             </a>
           </div>
@@ -31,7 +31,7 @@ function PhotoText({ title, text, photo, inverse, color, tamHeight }) {
           </div>
           <div className="title">
             <AiOutlinePlusCircle size={25} color="#4C6158" />
-            <a href="/area#trabalhista" target="_parent">
+            <a href="/area#digital" target="_parent">
               <p>{text.p3 ? text.p3 : ''}</p>
             </a>
           </div>
@@ -43,25 +43,25 @@ function PhotoText({ title, text, photo, inverse, color, tamHeight }) {
           </div>
           <div className="title">
             <AiOutlinePlusCircle size={25} color="#4C6158" />
-            <a href="/area#digital" target="_parent">
+            <a href="/area#empresarial" target="_parent">
               <p>{text.p5 ? text.p5 : ''}</p>
             </a>
           </div>
           <div className="title">
             <AiOutlinePlusCircle size={25} color="#4C6158" />
-            <a href="/area#tributario" target="_parent">
+            <a href="/area#penal" target="_parent">
               <p>{text.p6 ? text.p6 : ''}</p>
             </a>
           </div>
           <div className="title">
             <AiOutlinePlusCircle size={25} color="#4C6158" />
-            <a href="/area#penal" target="_parent">
+            <a href="/area#trabalhista" target="_parent">
               <p>{text.p7 ? text.p7 : ''}</p>
             </a>
           </div>
           <div className="title">
             <AiOutlinePlusCircle size={25} color="#4C6158" />
-            <a href="/area#administrativo" target="_parent">
+            <a href="/area#tributario" target="_parent">
               <p>{text.p8 ? text.p8 : ''}</p>
             </a>
           </div>

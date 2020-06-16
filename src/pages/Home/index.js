@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import SliderHome from '../../components/SliderHome';
+import Slider from '../../components/Slider';
 
 import PhotoText from '../../components/PhotoText';
 import PhotoTitle from '../../components/PhototTitle';
@@ -9,7 +9,7 @@ import home01 from '../../assets/home/home01.png';
 import home02 from '../../assets/home/home02.png';
 
 
-import { Container, Content } from './styles';
+import { Container, FadeIn01, FadeIn02, FadeIn03 } from './styles';
 
 export default function Home() {
 
@@ -28,25 +28,29 @@ export default function Home() {
   }
 
   const titles = {
-    p1: "DIREITO EMPRESARIAL",
+    p1: "DIREITO ADMINISTRATIVO",
     p2: "DIREITO CÍVEL",
-    p3: "DIREITO TRABALHISTA",
+    p3: "DIREITO DIGITAL",
     p4: "DIREITO ELEITORAL",
-    p5: "DIREITO DIGITAL",
-    p6: "DIREITO TRIBUTÁRIO",
-    p7: "DIREITO PENAL",
-    p8: "DIREITO ADMINISTRATIVO",
+    p5: "DIREITO EMPRESARIAL",
+    p6: "DIREITO PENAL",
+    p7: "DIREITO TRABALHISTA",
+    p8: "DIREITO TRIBUTÁRIO"
   }
 
   return (
     <Container>
-      <SliderHome />
+      <Slider />
+      <FadeIn01>Seriedade</FadeIn01>
+      <FadeIn02>Compromisso</FadeIn02>
+      <FadeIn03>Resultados</FadeIn03>
+
       <PhotoText
         title="Quem somos"
         text={text}
         photo={home01}
         inverse={false}
-        color="#f7f7f7"
+        color="#ffffff"
       />
 
       <PhotoTitle
@@ -54,7 +58,7 @@ export default function Home() {
         text={titles}
         photo={home02}
         inverse={true}
-        color="#ffffff"
+        color="#f7f7f7"
       />
     </Container>
   );

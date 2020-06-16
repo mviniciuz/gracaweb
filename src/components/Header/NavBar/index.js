@@ -23,7 +23,7 @@ function NavBar({ itemsMenu, setShow }) {
                         item === 'AREAS DE ATUAÇÃO' ? "/area" :
                           item === 'NOSSOS PRINCÍPIOS' ? "/principle" :
                             item === 'NOTÍCIAS' ? "/" :
-                              item === 'RESPONSABILIDADE' ? "/social" : item
+                              item === 'RESPONSABILIDADE SOCIAL' ? "/social" : item
               }>
                 <strong>{item}</strong>
               </Link>

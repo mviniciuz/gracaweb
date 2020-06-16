@@ -3,6 +3,8 @@ import React from 'react';
 import PhotoTitle from '../../components/PhototTitle';
 import PhotoText from '../../components/PhotoText';
 
+import topimage from '../../assets/area/area.png'
+
 import area01 from '../../assets/area/area01.png';
 import area02 from '../../assets/area/area02.png';
 import area03 from '../../assets/area/area03.png';
@@ -16,14 +18,14 @@ import area09 from '../../assets/area/area09.png'
 import { Container } from './styles';
 
 const titles = {
-  p1: "DIREITO EMPRESARIAL",
+  p1: "DIREITO ADMINISTRATIVO",
   p2: "DIREITO CÍVEL",
-  p3: "DIREITO TRABALHISTA",
+  p3: "DIREITO DIGITAL",
   p4: "DIREITO ELEITORAL",
-  p5: "DIREITO DIGITAL",
-  p6: "DIREITO TRIBUTÁRIO",
-  p7: "DIREITO PENAL",
-  p8: "DIREITO ADMINISTRATIVO",
+  p5: "DIREITO EMPRESARIAL",
+  p6: "DIREITO PENAL",
+  p7: "DIREITO TRABALHISTA",
+  p8: "DIREITO TRIBUTÁRIO"
 }
 
 const text02 = {
@@ -87,21 +89,22 @@ const text09 = {
 function Areas() {
   return (
     <Container>
+      <img className="area-image" src={topimage} alt="Imagem sobe nós" />
+      <div className="area-title">Areas de Atuação</div>
 
       <PhotoTitle
-        title="Áreas de atuação"
+
         text={titles}
         photo={area01}
         inverse={true}
         color="#ffffff"
-        tamHeight="80vh"
+        tamHeight="60vh"
       />
-
       <PhotoText
-        id="empresarial"
-        title="Direito Empresarial"
-        text={text02}
-        photo={area02}
+        id="administrativo"
+        title="Direito Administrativo"
+        text={text07}
+        photo={area07}
         inverse={false}
         color="#f7f7f7"
       />
@@ -116,10 +119,28 @@ function Areas() {
       />
 
       <PhotoText
-        id="trabalhista"
-        title="Direito Trabalhista"
-        text={text03}
-        photo={area03}
+        id="digital"
+        title="Direito Digital"
+        text={text05}
+        photo={area05}
+        inverse={false}
+        color="#f7f7f7"
+      />
+
+      <PhotoText
+        id="eleitoral"
+        title="Direito Eleitoral"
+        text={text09}
+        photo={area09}
+        inverse={true}
+        color="#ffffff"
+      />
+
+      <PhotoText
+        id="empresarial"
+        title="Direito Empresarial"
+        text={text02}
+        photo={area02}
         inverse={false}
         color="#f7f7f7"
       />
@@ -134,21 +155,12 @@ function Areas() {
       />
 
       <PhotoText
-        id="eleitoral"
-        title="Direito Eleitoral"
-        text={text09}
-        photo={area09}
+        id="trabalhista"
+        title="Direito Trabalhista"
+        text={text03}
+        photo={area03}
         inverse={false}
         color="#f7f7f7"
-      />
-
-      <PhotoText
-        id="digital"
-        title="Direito Digital"
-        text={text05}
-        photo={area05}
-        inverse={true}
-        color="#ffffff"
       />
 
       <PhotoText
@@ -156,15 +168,6 @@ function Areas() {
         title="Direito Tributário"
         text={text06}
         photo={area06}
-        inverse={false}
-        color="#f7f7f7"
-      />
-
-      <PhotoText
-        id="administrativo"
-        title="Direito Administrativo"
-        text={text07}
-        photo={area07}
         inverse={true}
         color="#ffffff"
       />

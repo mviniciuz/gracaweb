@@ -29,7 +29,7 @@ export const Container = styled.div`
     }
   }
 
-  .socios{
+  .advogados{
     height: 50vh;
     width: 100%;
 
@@ -37,16 +37,7 @@ export const Container = styled.div`
       height: 100vh;
       width: 100%;
     }
-  }
 
-  .associados{
-    height: 50vh;
-    width: 100%;
-
-    ${media.desktop} {
-      height: 100vh;
-      width: 100%;
-    }
   }
 
   h1 {
@@ -65,8 +56,10 @@ export const Container = styled.div`
       flex:1;
       justify-content: center;
       align-items: flex-start;
+      flex-wrap: wrap;
 
       ${media.desktop} {
+        flex-wrap: nowrap;
         flex-direction: column;
         align-items: center;
       }
@@ -81,16 +74,24 @@ export const Container = styled.div`
         justify-content: center;
         align-items: center;
 
+        min-width: 25%;
+
         img {
           height: auto;
           width: 35%;
         }
         h2 {
+          font-size: 1.1rem;
           text-align: justify;
           padding: 2vh 2vw ;
           ${media.desktop} {
             padding: 1vh 0vw ;
           }
+        }
+
+        h3 {
+          font-size: 1rem;
+          text-align: center;
         }
         p {
           font-size: 0.9rem;

@@ -88,7 +88,7 @@ export const Container = styled.div`
 
   }
   .box-text {
-    padding-left: 15%;
+    padding-left: 30%;
     padding-bottom: 30px;
   }
 `;

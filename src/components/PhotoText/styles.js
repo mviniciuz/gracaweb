@@ -40,6 +40,10 @@ export const Container = styled.div`
     img {
       height: auto;
       width: 65%;
+
+      ${media.desktop}{
+        width: 60%;
+      }
     }
   }
 

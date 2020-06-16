@@ -5,16 +5,6 @@ import { Container } from './styles';
 import socioFundador01 from '../../assets/team/socio-fundador01.png';
 import socioFundador02 from '../../assets/team/socio-fundador02.png';
 
-import socio01 from '../../assets/team/socio01.png';
-import socio02 from '../../assets/team/socio02.png';
-import socio03 from '../../assets/team/socio03.png';
-import socio04 from '../../assets/team/socio04.png';
-
-import associado01 from '../../assets/team/associado01.png';
-import associado02 from '../../assets/team/associado02.png';
-import associado03 from '../../assets/team/associado03.png';
-import associado04 from '../../assets/team/associado04.png';
-import associado05 from '../../assets/team/associado05.png';
 
 function Team() {
   const sociosFundadores = [
@@ -41,66 +31,47 @@ function Team() {
     }
   ]
 
-  const socios = [
+  const advogados = [
     {
       id: 1,
-      nome: 'TALITA CABRERA',
-      perfil: 'talita.cabrera@graca.adv.br',
-      img: socio01
+      nome: 'ANDRE MIRANDA',
     },
     {
       id: 2,
       nome: 'CAMILA MUNHOZ',
-      perfil: 'camila.munhoz@graca.adv.br',
-      img: socio02
     },
-
     {
       id: 3,
-      nome: 'ANDRE MIRANDA',
-      perfil: 'andre.miranda@garaca.adv.br',
-      img: socio03
+      nome: 'JOÃO F. FLAUZINO',
     },
     {
       id: 4,
+      nome: 'MURILO IORIS',
+    },
+    {
+      id: 5,
+      nome: 'PRISCILLA LUCIO',
+    },
+    {
+      id: 6,
+      nome: 'RAFAELA FÁVERO',
+    },
+    {
+      id: 7,
+      nome: 'RAUL P. SANTIN',
+    },
+    {
+      id: 8,
       nome: 'SERGIO S. TAKIGONE',
-      perfil: 'sergio.takigone@graca.adv.br',
-      img: socio04
+    },
+    {
+      id: 9,
+      nome: 'TALITA CABRERA',
     },
   ]
 
   const associados = [
-    {
-      id: 1,
-      nome: 'JOÃO F. FLAUZINO',
-      perfil: 'joao.flauzino@graca.adv.br',
-      img: associado01
-    },
-    {
-      id: 2,
-      nome: 'MURILO IORIS',
-      perfil: 'murilo.ioris@graca.adv.br',
-      img: associado02
-    },
-    {
-      id: 3,
-      nome: 'PRISCILLA LUCIO',
-      perfil: 'priscilla.lucio@graca.adv.br',
-      img: associado03
-    },
-    {
-      id: 4,
-      nome: 'RAUL P. SANTIN',
-      perfil: 'raul.santin@graca.adv.br',
-      img: associado04
-    },
 
-    {
-      id: 5,
-      nome: 'RAFAELA FÁVERO',
-      perfil: 'rafaela.favero@graca.adv.br',
-      img: associado05
-    },
   ]
 
   return (
@@ -118,31 +89,17 @@ function Team() {
         </ul>
       </div>
 
-      <div className="socios">
-        <h1>SÓCIOS</h1>
+      <div className="advogados">
+        <h1>Advogados</h1>
         <ul>
-          {socios.map(item => (
+          {advogados.map(item => (
             <li>
-              <img src={item.img} alt="imagem do sócio" />
-              <h2>{item.nome}</h2>
-              <p>{item.perfil}</p>
+              <h3>{item.nome}</h3>
             </li>
           ))}
         </ul>
       </div>
-      <div className="associados">
-        <h1>ASSOCIADOS</h1>
-        <ul>
-          {associados.map(item => (
-            <li>
-              <img src={item.img} alt="imagem do associado" />
-              <h2>{item.nome}</h2>
-              <p>{item.perfil}</p>
-            </li>
-          ))}
-        </ul>
 
-      </div>
     </Container>
   );
 }
