@@ -90,7 +90,7 @@ function Areas() {
   return (
     <Container>
       <img className="area-image" src={topimage} alt="Imagem sobe nós" />
-      <div className="area-title">Areas de Atuação</div>
+      <div className="area-title">AREAS DE ATUAÇÃO</div>
 
       <PhotoTitle
 

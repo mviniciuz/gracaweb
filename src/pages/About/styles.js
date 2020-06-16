@@ -28,7 +28,7 @@ export const Container = styled.div`
     position: absolute;
     top: 210px;
     left: 45vw;
-    font-size: 1.4rem;
+    font-size: 1.7rem;
     font-weight: bold;
     color: #ffffff;
 

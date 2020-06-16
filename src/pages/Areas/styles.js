@@ -22,7 +22,7 @@ export const Container = styled.div`
   .area-title {
     position: absolute;
     top: 210px;
-    left: 43%;
+    left: 42%;
     text-align: center;
     font-size: 1.7rem;
     font-weight: bold;
@@ -34,7 +34,8 @@ export const Container = styled.div`
       left:25%;
       top: 200px;
       text-align: center;
-
+      font-size: 1.2rem;
+      margin-top: 7px;
     }
   }
 
