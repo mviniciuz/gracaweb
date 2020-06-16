@@ -3,6 +3,10 @@ import { fadeInLeft } from 'react-animations';
 
 const fadeInLeftAnimated = keyframes`${fadeInLeft} `;
 
+const media = {
+  desktop: '@media(max-width: 900px)'
+}
+
 
 export const Container = styled.div`
   display: flex;
@@ -22,15 +26,19 @@ export const FadeIn01 = styled.div`
   font-size: 2.5rem;
   font-weight: bold;
   color: #F6F6F6;
-
   z-index:5;
+
+  ${media.desktop}{
+    top: 285px;
+    font-size: 1.1rem;
+  }
 
 `
 
 export const FadeIn02 = styled.div`
   position: absolute;
   top: 528px;
-  left: 27vw;
+  left: 29vw;
   animation: 3s ${fadeInLeftAnimated};
   animation-delay: 3s;
 
@@ -38,28 +46,31 @@ export const FadeIn02 = styled.div`
   font-size: 2.5rem;
   font-weight: bold;
   color:#F6F6F6 ;
-  width: 25vw;
-  opacity:0.9;
-  border-radius: 10px 10px;
-  padding-left: 25px;
   z-index:5;
+
+  ${media.desktop}{
+    top: 285px;
+    font-size: 1.1rem;
+  }
 `
 
 export const FadeIn03 = styled.div`
   position: absolute;
   top: 528px;
-  left: 27vw;
+  left: 29vw;
   animation: 3s ${fadeInLeftAnimated} ;
   animation-delay: 6s;
   transform: scale(0);
   font-size: 2.5rem;
   font-weight: bold;
   color: #F6F6F6;
-  width: 20vw;
-  opacity:0.9;
-  border-radius: 10px 10px;
-  padding-left: 25px;
+
   z-index:5;
+
+  ${media.desktop}{
+    top: 285px;
+    font-size: 1.1rem;
+  }
 
   `;
 
