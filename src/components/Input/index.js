@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { useField } from '@unform/core';
 
-import { In } from './styles';
+import { In, Message } from './styles';
 
 export default function Input({ name, ...rest }) {
 
@@ -14,5 +14,11 @@ export default function Input({ name, ...rest }) {
       path: 'value',
     });
   }, [fieldName, registerField]);
-  return <In ref={inputRef} defaultValue={defaultValue} {...rest} />;
+
+  return (
+    <>
+      <In ref={inputRef} defaultValue={defaultValue} className={error ? 'has-error' : ''} {...rest} />
+      {error && <Message className="error">{error}</Message>}
+    </>
+  );
 }

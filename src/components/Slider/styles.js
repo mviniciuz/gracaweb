@@ -1,10 +1,4 @@
-import styled, { keyframes } from 'styled-components';
-import { fadeInLeft } from 'react-animations';
-
-const fadeInLeftAnimated = keyframes`${fadeInLeft} `;
-
-
-
+import styled from 'styled-components';
 
 const media = {
   desktop: '@media(max-width: 900px)'

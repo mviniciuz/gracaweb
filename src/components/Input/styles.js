@@ -8,5 +8,9 @@ export const In = styled.input`
   margin-top: 10px;
   font-size: 0.7rem;
   padding-left: 15px;
+`;
 
+export const Message = styled.p`
+  font-size: 0.6rem;
+  color: red;
 `;

@@ -1,21 +1,96 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { toast } from 'react-toastify';
+import * as Yup from 'yup';
 
 import Input from '../../components/Input';
 import TextArea from '../../components/TextArea';
-
 import SocialBar from '../../components/SocialBar';
 
 import { MdLocalPhone, MdMailOutline } from 'react-icons/md';
 import { FaMapMarkerAlt } from 'react-icons/fa';
+
+import api from '../../services/api';
 
 import contact01 from '../../assets/contact/contact01.png';
 import contact02 from '../../assets/contact/contact02.png';
 
 import { Container, Form } from './styles';
 
+const schema = Yup.object().shape({
+  name: Yup.string()
+    .required(' * O campo e-mail é obrigatório'),
+  phone: Yup.string()
+    .required(' * O campo telefone é obrigatório'),
+  mail: Yup.string()
+    .email(' * Insira um e-mail válido')
+    .required('O campo e-mail é obrigatório'),
+});
+
 function Contact() {
-  function handleSubimit(data) {
-    console.log(data);
+  const formRefContact = useRef(null);
+  const formRefWork = useRef(null);
+
+  async function handleSubimitContact(data, { reset }) {
+    try {
+
+      formRefContact.current.setErrors({});
+      formRefWork.current.setErrors({});
+
+      await schema.validate(data, {
+        abortEarly: false,
+      })
+
+      const response = await api.post('/mail/contact', {
+        from: data.mail,
+        to: 'm.viniciuz@hotmail.com',
+        name: data.name,
+        phone: data.phone,
+        message: data.area,
+      });
+
+      toast.success('EMAIL ENVIADO COM SUCESSO!');
+      reset();
+    }
+    catch (err) {
+      const validationErrors = {};
+      if (err instanceof Yup.ValidationError) {
+        err.inner.forEach(error => {
+          validationErrors[error.path] = error.message;
+        });
+        formRefContact.current.setErrors(validationErrors);
+      }
+    }
+  }
+
+
+  async function handleSubimitWork(data, { reset }) {
+    try {
+      formRefWork.current.setErrors({});
+
+      await schema.validate(data, {
+        abortEarly: false,
+      })
+
+      const response = await api.post('/mail/work', {
+        from: data.mail,
+        to: 'm.viniciuz@hotmail.com',
+        name: data.name,
+        phone: data.phone,
+        message: data.area,
+      });
+
+      toast.success('EMAIL ENVIADO COM SUCESSO!');
+      reset();
+    }
+    catch (err) {
+      const validationErrors = {};
+      if (err instanceof Yup.ValidationError) {
+        err.inner.forEach(error => {
+          validationErrors[error.path] = error.message;
+        });
+        formRefWork.current.setErrors(validationErrors);
+      }
+    }
   }
   return (
     <Container>
@@ -25,11 +100,11 @@ function Contact() {
 
         <div className="fale-conosco">
           <div className="form-contato">
-            <Form onSubmit={handleSubimit}>
-              <Input name="name" placeholder="* Nome" />
-              <Input name="phone" placeholder="* Telefone" />
-              <Input name="mail" placeholder="* E-mail" />
-              <TextArea name="area" rows="50" cols="50" placeholder="Mensagem" />
+            <Form ref={formRefContact} onSubmit={handleSubimitContact}>
+              <Input name="name" type="text" placeholder="* Nome" />
+              <Input name="phone" type="text" placeholder="* Telefone" />
+              <Input name="mail" type="email" placeholder="* E-mail" />
+              <TextArea name="area" type="text" rows="50" cols="50" placeholder="Mensagem" />
               <button type="submit"><p>ENVIAR</p></button>
             </Form>
           </div>
@@ -57,12 +132,9 @@ function Contact() {
       <h1>TRABALHE CONOSCO</h1>
 
       <div className="content-trabalhe">
-
-
         <div className="trabalhe-conosco">
-
           <div className="form-contato">
-            <Form onSubmit={handleSubimit}>
+            <Form ref={formRefWork} onSubmit={handleSubimitWork}>
               <Input name="name" placeholder="* Nome" />
               <Input name="phone" placeholder="* Telefone" />
               <Input name="mail" placeholder="* E-mail" />
@@ -75,7 +147,6 @@ function Contact() {
         <div className="trabalhe-photo">
           <img src={contact02} />
         </div>
-
 
       </div>
     </Container>
