@@ -10,7 +10,7 @@ import SocialBar from '../SocialBar/index';
 import { Container, Content, ContentSocial, Menu, ItemMenu, Button, ImgMenu, Img } from './styles';
 
 function Header() {
-  const menu = ['HOME', 'QUEM SOMOS', 'NOSSA EQUIPE', 'AREAS DE ATUAÇÃO', 'NOSSOS PRINCÍPIOS', 'NOTÍCIAS', 'RESPONSABILIDADE SOCIAL', 'CONTATO'];
+  const menu = ['HOME', 'QUEM SOMOS', 'AREAS DE ATUAÇÃO', 'NOSSOS PRINCÍPIOS', 'NOTÍCIAS', 'RESPONSABILIDADE SOCIAL', 'CONTATO'];
 
   const [visible, setVisible] = useState(false);
 

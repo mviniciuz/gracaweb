@@ -41,10 +41,6 @@ export default function Home() {
   return (
     <Container>
       <Slider />
-      <FadeIn01>Seriedade</FadeIn01>
-      <FadeIn02>Compromisso</FadeIn02>
-      <FadeIn03>Resultados</FadeIn03>
-
       <PhotoText
         title="Quem somos"
         text={text}
@@ -63,3 +59,8 @@ export default function Home() {
     </Container>
   );
 }
+
+
+//<FadeIn01>Seriedade</FadeIn01>
+//<FadeIn02>Compromisso</FadeIn02>
+//<FadeIn03>Resultados</FadeIn03>

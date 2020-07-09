@@ -1,29 +1,33 @@
 import React from 'react';
 
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 
 import DefaultLayout from '../pages/_layouts/default';
+import AuthLayout from '../pages/_layouts/auth';
+import DashLayout from '../pages/_layouts/dash';
 
-//import { store } from '~/store';
+import { store } from '../store';
 
 export default function RouteWrapper({
   component: Component,
   isPrivate,
+  isSignin,
+  isDash,
   ...rest
 }) {
 
-  // const { signed } = store.getState().auth;
+  const { signed } = store.getState().auth;
+  if (!signed && isPrivate) {
+    return <Redirect to="/signin" />
+  }
 
-  //  if (!signed && isPrivate) {
-  //    return <Redirect to="/" />
-  //  }
-  // if (signed && !isPrivate) {
-  //return <Redirect to="/dashboard" />
-  //  }
-
-  // const Layout = signed ? DefaultLayout : AuthLayout;
-
-  const Layout = DefaultLayout;
+  let Layout = DefaultLayout;
+  if (isSignin) {
+    Layout = AuthLayout;
+  }
+  if (isDash) {
+    Layout = DashLayout;
+  }
 
   return <Route {...rest} render={props => (
     <Layout>
