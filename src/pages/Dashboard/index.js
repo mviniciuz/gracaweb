@@ -5,11 +5,7 @@ import Logo from '../../assets/logoini.svg';
 import { Container } from './styles';
 
 function Dashboard() {
-  return (
-    <Container>
-
-    </Container>
-  );
+  return <Container />;
 }
 
 export default Dashboard;

@@ -8,15 +8,13 @@ import { signInRequest } from '../../../store/modules/auth/actions';
 import logo from '../../../assets/logoini.svg';
 
 const schema = Yup.object().shape({
-  document: Yup.string()
-    .required('Cnpj ou cpf obrigatórios'),
-  password: Yup.string()
-    .required('A senha é obrigatória')
+  document: Yup.string().required('Cnpj ou cpf obrigatórios'),
+  password: Yup.string().required('A senha é obrigatória'),
 });
 
 export default function SignIn() {
   const dispatch = useDispatch();
-  const loading = useSelector(state => state.auth.loading);
+  const loading = useSelector((state) => state.auth.loading);
 
   function handleSubmit({ document, password }) {
     dispatch(signInRequest(document, password));
@@ -26,7 +24,11 @@ export default function SignIn() {
     <>
       <img src={logo} alt="graca" />
       <Form schema={schema} onSubmit={handleSubmit}>
-        <Input name="document" type="text" placeholder="Digite seu CNPJ ou CPF" />
+        <Input
+          name="document"
+          type="text"
+          placeholder="Digite seu CNPJ ou CPF"
+        />
         <Input name="password" type="password" placeholder="Digite sua Senha" />
         <button type="submit">{loading ? 'Carregando' : 'Acessar'} </button>
       </Form>

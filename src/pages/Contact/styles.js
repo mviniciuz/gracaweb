@@ -3,17 +3,16 @@ import styled from 'styled-components';
 import { Form as Unform } from '@unform/web';
 
 const media = {
-  desktop: '@media(max-width: 900px)'
-}
+  desktop: '@media(max-width: 900px)',
+};
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
 
-
   .content-fale {
-    display:flex;
-    flex:1;
+    display: flex;
+    flex: 1;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -21,92 +20,92 @@ export const Container = styled.div`
     width: 100%;
 
     > h1 {
-      font-size:1.7rem;
+      font-size: 1.7rem;
       position: absolute;
-      color: #568A74;
+      color: #568a74;
       margin-top: 35px;
-      ${media.desktop}{
+      ${media.desktop} {
         font-size: 1.2rem;
         margin-top: 7px;
-     }
+      }
     }
 
     img {
-      height:auto;
+      height: auto;
       width: 100%;
     }
   }
 
-  .fale-conosco{
-    display:flex;
+  .fale-conosco {
+    display: flex;
     height: 60vh;
     width: 80%;
 
-    ${media.desktop}{
+    ${media.desktop} {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-     }
+    }
   }
 
   .form-contato {
     display: flex;
-    flex:1;
+    flex: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    ${media.desktop}{
+    ${media.desktop} {
       justify-content: center;
     }
   }
-  .contato{
+  .contato {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    ${media.desktop} {
+      display: none;
+    }
+
+    .item {
       display: flex;
-      flex:1;
-      flex-direction: column;
-      justify-content: center;
+
+      flex-direction: row;
+      justify-content: flex-start;
       align-items: center;
 
-      ${media.desktop}{
-         display:none;
-      }
+      width: 90%;
 
-      .item {
-        display: flex;
+      min-width: 350px;
+      padding-left: 20%;
+      margin-bottom: 30px;
 
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-
-        width: 90%;
-
-        min-width: 350px;
-        padding-left: 20%;
-        margin-bottom: 30px;
-
-        p {
-          font-size: 0.8rem;
-          font-weight:bold;
-          color: #525252;
-          padding-left: 10px;
-        }
+      p {
+        font-size: 0.8rem;
+        font-weight: bold;
+        color: #525252;
+        padding-left: 10px;
       }
     }
+  }
 
-    h1 {
-      text-align: center;
-      font-size:1.7rem;
-      color: #568A74;
-      margin-top: 30px;
+  h1 {
+    text-align: center;
+    font-size: 1.7rem;
+    color: #568a74;
+    margin-top: 30px;
 
-      ${media.desktop}{
-        font-size: 1.2rem;
-       }
+    ${media.desktop} {
+      font-size: 1.2rem;
     }
+  }
 
   .content-trabalhe {
-    display:flex;
-    flex:1;
+    display: flex;
+    flex: 1;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
@@ -114,7 +113,7 @@ export const Container = styled.div`
     height: 70vh;
     width: 100%;
 
-    ${media.desktop}{
+    ${media.desktop} {
       flex-direction: column;
       justify-content: center;
       align-items: center;
@@ -124,22 +123,21 @@ export const Container = styled.div`
     padding-right: 10%;
   }
 
-  .trabalhe-conosco{
-    display:flex;
-    flex:1;
+  .trabalhe-conosco {
+    display: flex;
+    flex: 1;
     height: 70vh;
 
-    ${media.desktop}{
+    ${media.desktop} {
       flex-direction: column;
       justify-content: center;
       align-items: center;
     }
-
   }
 
-  .trabalhe-photo{
+  .trabalhe-photo {
     display: flex;
-    flex:1;
+    flex: 1;
     height: 70vh;
     flex-direction: column;
     justify-content: center;
@@ -149,16 +147,15 @@ export const Container = styled.div`
       width: 75%;
     }
 
-    ${media.desktop}{
+    ${media.desktop} {
       display: none;
     }
-
   }
 `;
 
 export const Form = styled(Unform)`
   display: flex;
-  flex:1;
+  flex: 1;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
@@ -169,7 +166,7 @@ export const Form = styled(Unform)`
     height: 30px;
     width: 120px;
     margin-top: 5px;
-    background: #A0A0A0;
+    background: #a0a0a0;
     border-radius: 5px;
     border: none;
 
@@ -179,4 +176,3 @@ export const Form = styled(Unform)`
     }
   }
 `;
-
