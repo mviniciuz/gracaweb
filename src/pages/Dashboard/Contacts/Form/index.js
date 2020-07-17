@@ -1,5 +1,5 @@
-import React from 'react';
-import { Form, Input, Select } from '@rocketseat/unform';
+import React, { useState, useEffect } from 'react';
+import { Form, Input, Select, Choice } from '@rocketseat/unform';
 
 import { toast } from 'react-toastify';
 import * as Yup from 'yup';
@@ -13,19 +13,40 @@ const schema = Yup.object().shape({
   mail: Yup.string().required('Informe o E-mail'),
   phone: Yup.string(),
   status: Yup.boolean(),
+  tags: Yup.array(),
 });
 
 function FormContact({ contact, setShow, setContacts }) {
+  const [tags, setTags] = useState([]);
+
+  useEffect(() => {
+    async function loadTags() {
+      const response = await api.get('/tag');
+
+      response.data.map((item) => {
+        setTags((prevTag) => [
+          ...prevTag,
+          { value: item.tag, label: item.tag },
+        ]);
+      });
+    }
+    loadTags();
+  }, []);
+
   async function handleSubimit(data) {
     try {
+      console.tron.log(data);
       if (!contact) {
+        data = {
+          ...data,
+          status: true,
+        };
         await api.post('/contact', data);
 
         const response = await api.get('/contact');
         setContacts(response.data);
       }
       if (contact) {
-        console.tron.log(data);
         await api.put(`/contact/${contact._id}`, data);
         const response = await api.get('/contact');
         setContacts(response.data);
@@ -44,16 +65,27 @@ function FormContact({ contact, setShow, setContacts }) {
         <h1>Contato</h1>
         <br />
         <Form schema={schema} initialData={contact} onSubmit={handleSubimit}>
-          <Input name="name" type="text" placeholder="* Informe o nome" />
-          <Input name="mail" type="text" placeholder="* Informe o e-mail" />
-          <Select
-            name="status"
-            placeholder=" Selecione o status"
-            options={[
-              { id: 'true', title: 'Ativo' },
-              { id: 'false', title: 'Inativo' },
-            ]}
-          />
+          <Input name="name" type="text" placeholder="  Nome" />
+          <Input name="mail" type="text" placeholder="* E-mail" />
+          <Input name="phone" type="text" placeholder=" Telefone" />
+          {contact && (
+            <Select
+              name="status"
+              placeholder=" Selecione o status"
+              options={[
+                { id: true, title: 'Ativo' },
+                { id: false, title: 'Inativo' },
+              ]}
+            />
+          )}
+
+          <br />
+          <br />
+          <h2>Segmentação (padrão/todos)</h2>
+          <div className="tags">
+            <Choice name="tags" options={tags} multiple />
+          </div>
+          <br />
 
           <button className="button-gravar" type="submit">
             <p>GRAVAR</p>
@@ -63,7 +95,9 @@ function FormContact({ contact, setShow, setContacts }) {
             className="button-cancelar"
             type="button"
             onClick={() => setShow(false)}
+            placeholder=" Selecione o status"
           >
+            {' '}
             <p>CANCELAR</p>
           </button>
         </Form>

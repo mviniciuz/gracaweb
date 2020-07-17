@@ -51,9 +51,6 @@ function FormUser({ user, setShow, setUsers }) {
         <h1>Usuário</h1>
         <br />
         <Form schema={schema} initialData={user} onSubmit={handleSubimit}>
-          <Input name="document" type="text" placeholder="* CPF ou CNPJ" />
-          <Input name="name" type="text" placeholder="* Nome" />
-          <Input name="email" type="text" placeholder="* E-mail" />
           <Select
             name="admin"
             placeholder="Admin"
@@ -62,6 +59,9 @@ function FormUser({ user, setShow, setUsers }) {
               { id: 'false', title: 'Não' },
             ]}
           />
+          <Input name="document" type="text" placeholder="* CPF ou CNPJ" />
+          <Input name="name" type="text" placeholder="* Nome" />
+          <Input name="email" type="text" placeholder="* E-mail" />
 
           {user && (
             <Input

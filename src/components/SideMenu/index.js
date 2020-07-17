@@ -8,44 +8,56 @@ import { Container } from './styles';
 function SideMenu() {
   return (
     <Container>
-
       <img src={Logo} />
       <br />
       <br />
 
-      <Link to={"/contacts"}>
+      <Link to="/news">
+        <button type="submit">
+          <strong>Notícias</strong>
+        </button>
+      </Link>
+      <Link to="/mail">
+        <button type="submit">
+          <strong>Envios</strong>
+        </button>
+      </Link>
+
+      <br />
+      <br />
+
+      <Link to="/contacts">
         <button type="submit">
           <strong>Contatos</strong>
         </button>
       </Link>
-      <Link to={"/tags"}>
+      <Link to="/tags">
         <button type="submit">
           <strong>Tags</strong>
         </button>
       </Link>
-      <Link to={"/mail"}>
-        <button type="submit">
-          <strong>E-mail</strong>
-        </button>
-      </Link>
-      <Link to={"/news"}>
-        <button type="submit">
-          <strong>News</strong>
-        </button>
-      </Link>
+
       <br />
       <br />
-      <Link to={"/users"}>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <Link to="/users">
         <button type="submit">
           <strong>Usuários</strong>
         </button>
       </Link>
-      <Link to={"/"}>
+      <Link to="/">
         <button type="submit">
           <strong>Configurações</strong>
         </button>
       </Link>
-    </Container >
+    </Container>
   );
 }
 

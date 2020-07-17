@@ -5,10 +5,11 @@ import { darken } from 'polished';
 export const Container = styled.div`
   z-index: 9999;
   width: 100vw;
-  height: 100vh;
+  height: auto;
+  min-height: auto;
 
   width: 20%;
-  height: 100vh;
+
   background: rgba(255, 255, 255, 0.3);
 
   display: flex;

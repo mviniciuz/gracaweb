@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Wrapper, Content } from './styles';
+import { Wrapper } from './styles';
 
 import SideMenu from '../../../components/SideMenu';
 
@@ -11,11 +11,9 @@ export default function authLayout({ children }) {
       <SideMenu />
       {children}
     </Wrapper>
-  )
+  );
 }
 
 authLayout.propTypes = {
   children: PropTypes.element.isRequired,
-}
-
-
+};

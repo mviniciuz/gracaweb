@@ -41,11 +41,7 @@ function FormTag({ tag, setShow, setTags }) {
         <h1>Tag</h1>
         <br />
         <Form schema={schema} initialData={tag} onSubmit={handleSubimit}>
-          <Input
-            name="tag"
-            type="text"
-            placeholder="* Informe a descrição da Tag"
-          />
+          <Input name="tag" type="text" placeholder="* Descrição da Tag" />
 
           <button className="button-gravar" type="submit">
             <p>GRAVAR</p>

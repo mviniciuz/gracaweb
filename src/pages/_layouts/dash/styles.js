@@ -13,7 +13,6 @@ export const Wrapper = styled.div`
   form {
     display: flex;
     flex-direction: column;
-
     margin-top: 30px;
 
     input,
@@ -30,13 +29,6 @@ export const Wrapper = styled.div`
       &::placeholder {
         color: #525252;
       }
-    }
-
-    span {
-      color: #fb6f91;
-      align-self: flex-start;
-      margin: 0 0 10px;
-      font-weight: bold;
     }
 
     .button-gravar {
