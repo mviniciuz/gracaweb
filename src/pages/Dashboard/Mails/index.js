@@ -56,13 +56,6 @@ function Mails() {
       <Painel>
         <h1> E-mails</h1>
 
-        <input
-          name="search"
-          type="text"
-          placeholder=" Digite para pesquisar"
-          onChange={handleChange}
-          value={arg}
-        />
         <button type="button" onClick={() => newRegister()}>
           <MdAdd size={40} color="#007641" />
         </button>

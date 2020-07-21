@@ -17,4 +17,27 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
   }
+
+  h2 {
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    color: #525252;
+  }
+
+  .tags {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    label {
+      margin-bottom: 10px;
+      margin-left: 2px;
+    }
+
+    input {
+      margin-left: 10px;
+    }
+  }
 `;

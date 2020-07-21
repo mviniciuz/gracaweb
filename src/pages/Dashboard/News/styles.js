@@ -106,7 +106,6 @@ export const Table = styled.table`
   strong {
     color: #525252;
     display: block;
-
     text-align: left;
     min-width: 10vw;
   }

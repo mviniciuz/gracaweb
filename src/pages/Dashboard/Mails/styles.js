@@ -106,6 +106,8 @@ export const Table = styled.table`
   strong {
     font-size: 0.75rem;
     color: #525252;
+    text-align: left;
+    min-width: 10vw;
   }
 
   button {
