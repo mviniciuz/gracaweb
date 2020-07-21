@@ -12,20 +12,20 @@ const schema = Yup.object().shape({
   tag: Yup.string().required('Informar a descrição da Tag'),
 });
 
-function FormTag({ tag, setShow, setTags }) {
+function FormMail({ mail, setShow, setMails }) {
   async function handleSubimit(data) {
     try {
-      if (!tag) {
-        await api.post('/tag', data);
+      if (!mail) {
+        await api.post('/mail', data);
 
-        const response = await api.get('/tag');
-        setTags(response.data);
+        const response = await api.get('/mail');
+        setMails(response.data);
       }
-      if (tag) {
+      if (mail) {
         console.tron.log(data);
-        await api.put(`/tag/${tag._id}`, data);
-        const response = await api.get('/tag');
-        setTags(response.data);
+        await api.put(`/tag/${mail._id}`, data);
+        const response = await api.get('/mail');
+        setMails(response.data);
       }
     } catch (err) {
       toast.error(`${err.response.data.erro}`);
@@ -38,9 +38,9 @@ function FormTag({ tag, setShow, setTags }) {
   return (
     <Container>
       <div className="content">
-        <h1>Seguimento</h1>
+        <h1>Tag</h1>
         <br />
-        <Form schema={schema} initialData={tag} onSubmit={handleSubimit}>
+        <Form schema={schema} initialData={mail} onSubmit={handleSubimit}>
           <Input name="tag" type="text" placeholder="* Descrição da Tag" />
 
           <button className="button-gravar" type="submit">
@@ -60,4 +60,4 @@ function FormTag({ tag, setShow, setTags }) {
   );
 }
 
-export default FormTag;
+export default FormMail;

@@ -5,9 +5,7 @@ import { darken } from 'polished';
 export const Container = styled.div`
   z-index: 9999;
   width: 100vw;
-  height: auto;
-  min-height: auto;
-
+  height: 100vh;
   width: 20%;
 
   background: rgba(255, 255, 255, 0.3);

@@ -75,7 +75,7 @@ export const Painel = styled.div`
 export const Content = styled.div`
   display: flex;
   width: 100%;
-  height: 100%;
+  height: 90%;
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.7);
 `;
@@ -88,7 +88,7 @@ export const Table = styled.table`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
+    align-items: center;
     border-bottom: 1px solid #eee;
   }
 
@@ -101,14 +101,15 @@ export const Table = styled.table`
   }
 
   tbody td {
-    padding: 10px;
-
     font-size: 0.75rem;
   }
 
   strong {
     color: #525252;
     display: block;
+
+    text-align: left;
+    min-width: 10vw;
   }
 
   button {

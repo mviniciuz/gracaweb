@@ -87,7 +87,7 @@ export const Table = styled.table`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
+    align-items: center;
     border-bottom: 1px solid #eee;
   }
 
@@ -100,14 +100,15 @@ export const Table = styled.table`
   }
 
   tbody td {
-    padding: 10px;
-
     font-size: 0.75rem;
   }
 
   strong {
     color: #525252;
     display: block;
+
+    text-align: left;
+    min-width: 10vw;
   }
 
   button {

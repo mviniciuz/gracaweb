@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form, Input, Select } from '@rocketseat/unform';
 
 import draftToHtml from 'draftjs-to-html';
 import htmlToDraft from 'html-to-draftjs';
 
-import { EditorState, convertToRaw } from 'draft-js';
+import { EditorState, convertToRaw, ContentState } from 'draft-js';
 import { Editor } from 'react-draft-wysiwyg';
 import '.../../.././node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
@@ -28,30 +28,48 @@ const schema = Yup.object().shape({
 function FormNews({ news, setShow, setNewsList }) {
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
 
+  useEffect(() => {
+    if (news) {
+      const html = Buffer.from(news.body, 'base64').toString('utf-8');
+      const contentBlock = htmlToDraft(html);
+      if (contentBlock) {
+        const contentState = ContentState.createFromBlockArray(
+          contentBlock.contentBlocks
+        );
+        setEditorState(EditorState.createWithContent(contentState));
+      }
+    }
+  }, []);
+
   async function handleSubimit(data) {
-    console.tron.log(data);
     try {
       if (!news) {
         data = {
           ...data,
-          body: new Buffer(
+          body: Buffer.from(
+            draftToHtml(convertToRaw(editorState.getCurrentContent())),
+            'utf-8'
+          ).toString('base64'),
+        };
+        await api.post('/news', data);
+        const response = await api.get('/news');
+        setNewsList(response.data);
+      }
+      if (news) {
+        data = {
+          ...data,
+          body: Buffer.from(
             draftToHtml(convertToRaw(editorState.getCurrentContent())),
             'utf-8'
           ).toString('base64'),
         };
 
-        await api.post('/news', data);
-
-        const response = await api.get('/news');
-        setNewsList(response.data);
-      }
-      if (news) {
-        console.tron.log(data);
         await api.put(`/news/${news._id}`, data);
         const response = await api.get('/news');
         setNewsList(response.data);
       }
     } catch (err) {
+      console.tron.log(err.response);
       toast.error(`${err.response.data.erro}`);
       return;
     }
@@ -65,8 +83,8 @@ function FormNews({ news, setShow, setNewsList }) {
   return (
     <Container>
       <div className="content">
-        <h1>Informativo ou Notícia</h1>
-        <br />
+        <h1>Detelhes Informativo</h1>
+
         <Form schema={schema} initialData={news} onSubmit={handleSubimit}>
           <Select
             name="type"
@@ -88,12 +106,14 @@ function FormNews({ news, setShow, setNewsList }) {
               { id: false, title: 'NÃO' },
             ]}
           />
-          <Editor
-            editorState={editorState}
-            wrapperClassName="demo-wrapper"
-            editorClassName="demo-editor"
-            onEditorStateChange={onEditorStateChange}
-          />
+          <div className="container-editor">
+            <Editor
+              editorState={editorState}
+              wrapperClassName="demo-wrapper"
+              editorClassName="demo-editor"
+              onEditorStateChange={onEditorStateChange}
+            />
+          </div>
 
           <button className="button-gravar" type="submit">
             <p>GRAVAR</p>

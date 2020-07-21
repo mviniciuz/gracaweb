@@ -14,12 +14,12 @@ function SideMenu() {
 
       <Link to="/news">
         <button type="submit">
-          <strong>Notícias</strong>
+          <strong>Informativos</strong>
         </button>
       </Link>
       <Link to="/mail">
         <button type="submit">
-          <strong>Envios</strong>
+          <strong>E-mails</strong>
         </button>
       </Link>
 
@@ -33,12 +33,10 @@ function SideMenu() {
       </Link>
       <Link to="/tags">
         <button type="submit">
-          <strong>Tags</strong>
+          <strong>Seguimentos</strong>
         </button>
       </Link>
 
-      <br />
-      <br />
       <br />
       <br />
       <br />

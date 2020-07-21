@@ -66,7 +66,7 @@ function Users() {
   return (
     <Container>
       <Painel>
-        <h1> Informativos e Notícias</h1>
+        <h1> Informativos</h1>
 
         <input
           name="search"

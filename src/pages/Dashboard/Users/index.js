@@ -65,7 +65,7 @@ function Users() {
   return (
     <Container>
       <Painel>
-        <h1> Cadastro de Usuários</h1>
+        <h1> Usuários</h1>
 
         <input
           name="search"
