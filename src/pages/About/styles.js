@@ -1,21 +1,20 @@
 import styled from 'styled-components';
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const media = {
-  desktop: '@media(max-width: 900px)'
-}
+  desktop: '@media(max-width: 900px)',
+};
 
 export const Container = styled.div`
   display: flex;
-  flex:1;
+  flex: 1;
 
   flex-direction: column;
   justify-content: flex-start;
 
-  .sobre-image{
+  .sobre-image {
     height: 15vh;
     max-width: 100%;
 
@@ -36,10 +35,9 @@ export const Container = styled.div`
       top: 200px;
       left: 35vw;
     }
-
   }
 
-  .container-slider{
+  .container-slider {
     height: 55vh;
     width: 95%;
     padding-left: 5%;
@@ -47,7 +45,7 @@ export const Container = styled.div`
     h1 {
       font-size: 2.5rem;
       color: #202020;
-      padding-top:10px;
+      padding-top: 10px;
       padding-bottom: 40px;
       text-align: center;
     }
@@ -63,5 +61,3 @@ export const Container = styled.div`
     }
   }
 `;
-
-

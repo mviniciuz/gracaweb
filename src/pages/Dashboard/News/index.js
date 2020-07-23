@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
 
 import { format, parseISO } from 'date-fns';
 import pt from 'date-fns/locale/pt';
@@ -44,9 +45,13 @@ function Users() {
   }, [page, arg]);
 
   async function deleteRegister(id) {
-    await api.delete(`/news/${id}`);
-    const response = await api.get('/news');
-    setNewsList(response.data);
+    try {
+      await api.delete(`/news/${id}`);
+      const response = await api.get('/news');
+      setNewsList(response.data);
+    } catch (err) {
+      toast.error(`${err.response.data.erro}`);
+    }
   }
 
   async function editRegister(data) {
@@ -76,34 +81,43 @@ function Users() {
           value={arg}
         />
         <button type="button" onClick={() => newRegister()}>
-          <MdAdd size={40} color="#007641" />
+          <MdAdd size={40} color="#3ba779" />
         </button>
       </Painel>
       <Content>
         <Table>
           <thead>
             <tr>
-              <th>Edição</th>
-              <th>Titulo</th>
-              <th />
-              <th>Autor</th>
-              <th>Data</th>
-              <th />
+              <th className="tam1">Edição</th>
+              <th className="tam3">Titulo</th>
+              <th className="tam2">Autor</th>
+              <th className="tam1">Ativo Site</th>
+              <th className="tam1">Tipo</th>
+              <th className="tam1">Data</th>
+              <th className="tam1" />
             </tr>
           </thead>
           <tbody>
             {newsList.map((item) => (
               <tr>
-                <td>
+                <td className="tam1">
                   <strong>{item.edition}</strong>
                 </td>
-                <td>
+                <td className="tam3">
                   <strong>{item.title}</strong>
                 </td>
-                <td>
+                <td className="tam2">
                   <strong>{item.author}</strong>
                 </td>
-                <td>
+                <td className="tam1">
+                  <strong>{item.activeSite ? 'Sim' : 'Não'}</strong>
+                </td>
+                <td className="tam1">
+                  <strong>
+                    {item.type === 'I' ? 'Informativo' : 'Notícia'}
+                  </strong>
+                </td>
+                <td className="tam1">
                   <strong>
                     {format(parseISO(item.createdAt), "d'/'MM'/'yyyy", {
                       locale: pt,
@@ -112,13 +126,13 @@ function Users() {
                 </td>
                 <td>
                   <button type="button" onClick={() => editRegister(item)}>
-                    <MdEdit size={15} color="#333" />
+                    <MdEdit size={15} color="#3ba779" />
                   </button>
                   <button
                     type="button"
                     onClick={() => deleteRegister(item._id)}
                   >
-                    <MdDelete size={15} color="#333" />
+                    <MdDelete size={15} color="#3ba779" />
                   </button>
                 </td>
               </tr>
@@ -132,11 +146,11 @@ function Users() {
 
       <div className="page">
         <button type="button" onClick={() => setPage(page - 1)}>
-          <MdFirstPage size={30} color="#525252" />
+          <MdFirstPage size={30} color="#3ba779" />
         </button>
         <p>{page}</p>
         <button type="button" onClick={() => setPage(page + 1)}>
-          <MdLastPage size={30} color="#525252" />
+          <MdLastPage size={30} color="#3ba779" />
         </button>
       </div>
     </Container>

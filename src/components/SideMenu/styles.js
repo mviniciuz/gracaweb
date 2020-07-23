@@ -20,7 +20,7 @@ export const Container = styled.div`
   button {
     width: 170px;
     height: 40px;
-    background: rgba(256, 256, 256, 0.45);
+    background: rgba(256, 256, 256, 0.97);
     border-radius: 5px;
 
     margin-top: 10px;
@@ -29,11 +29,11 @@ export const Container = styled.div`
     border: none;
 
     &:hover {
-      background: ${darken(0.03, '#3BA779')};
+      background: ${darken(0.03, '#f7f7f7')};
     }
 
     > strong {
-      color: #007641;
+      color: #3ba779;
       font-weight: bold;
       font-size: 1rem;
       opacity: 0.7;

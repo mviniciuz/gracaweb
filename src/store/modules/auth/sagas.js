@@ -12,7 +12,7 @@ export function* signIn({ payload }) {
 
     const response = yield call(api.post, 'session', {
       document,
-      password
+      password,
     });
 
     const { token, user } = response.data;
@@ -26,7 +26,6 @@ export function* signIn({ payload }) {
 
     yield put(signInSuccess(token, user));
     history.push('/dashboard');
-
   } catch (err) {
     toast.error('Falha na autenticação, verifique seus dados!');
     yield put(signFailure());
@@ -42,10 +41,9 @@ export function* signUp({ payload }) {
       email,
       password,
       provider: true,
-    })
+    });
 
     history.push('/');
-
   } catch (err) {
     toast.error('falha no cadastro, verifique seus dados');
     yield put(signFailure);
@@ -63,7 +61,7 @@ export function setToken({ payload }) {
 }
 
 export function signOut() {
-  history.push('/');
+  history.push('/dashboard');
 }
 
 export default all([

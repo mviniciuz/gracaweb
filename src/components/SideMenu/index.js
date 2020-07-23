@@ -50,7 +50,7 @@ function SideMenu() {
           <strong>Usuários</strong>
         </button>
       </Link>
-      <Link to="/">
+      <Link to="/dashboard">
         <button type="submit">
           <strong>Configurações</strong>
         </button>

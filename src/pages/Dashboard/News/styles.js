@@ -11,7 +11,7 @@ export const Container = styled.div`
   padding: 30px 40px;
 
   h1 {
-    color: #007641;
+    color: #3ba779;
     font-weight: bold;
     font-size: 1.5rem;
     margin-left: 15px;
@@ -33,6 +33,7 @@ export const Container = styled.div`
       font-size: 1rem;
       text-align: center;
       width: 100px;
+      color: #3ba779;
     }
   }
 `;
@@ -61,12 +62,12 @@ export const Painel = styled.div`
     height: 25px;
     width: 300px;
     padding: 0 15px;
-    color: #525252;
+    color: #7c7a7a;
     margin: 0 0 10px;
     font-size: 0.8rem;
 
     &::placeholder {
-      color: #525252;
+      color: #7c7a7a;
     }
   }
 `;
@@ -92,9 +93,8 @@ export const Table = styled.table`
   }
 
   thead th {
-    color: #525252;
+    color: #aaaaaa;
     text-align: left;
-    padding-left: 12px;
     font-size: 0.7rem;
     padding-bottom: 15px;
   }
@@ -104,15 +104,23 @@ export const Table = styled.table`
   }
 
   strong {
-    color: #525252;
-    display: block;
+    color: #7c7a7a;
     text-align: left;
-    min-width: 10vw;
   }
 
   button {
     background: none;
     padding: 6px;
     border: 0;
+  }
+
+  .tam1 {
+    flex: 1;
+  }
+  .tam2 {
+    flex: 2;
+  }
+  .tam3 {
+    flex: 6;
   }
 `;

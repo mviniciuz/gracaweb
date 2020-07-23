@@ -4,6 +4,8 @@ import { Form, Choice, Select } from '@rocketseat/unform';
 import { toast } from 'react-toastify';
 import * as Yup from 'yup';
 
+import Show from './Show';
+
 import { Container } from './styles';
 
 import api from '../../../../services/api';
@@ -11,13 +13,14 @@ import api from '../../../../services/api';
 function FormMail({ mail, setShow, setMails }) {
   const [news, setNews] = useState([]);
   const [tags, setTags] = useState([]);
+  const [showRegister, setShowRegister] = useState(false);
 
   useEffect(() => {
     async function loadReg() {
       const response = await api.get('/news');
       const newArray = response.data.map((item) => ({
         id: item._id,
-        title: item.title,
+        title: `    ${item.edition} - ${item.title} - ${item.author}       `,
       }));
 
       setNews(newArray);
@@ -32,7 +35,10 @@ function FormMail({ mail, setShow, setMails }) {
       response.data.map((item) => {
         setTags((prevTag) => [
           ...prevTag,
-          { value: item.tag, label: item.tag },
+          {
+            value: item.tag,
+            label: item.tag,
+          },
         ]);
       });
     }
@@ -41,8 +47,6 @@ function FormMail({ mail, setShow, setMails }) {
 
   async function handleSubimit(data) {
     try {
-      console.tron.log(data);
-
       await api.post('/mail', data, { params: { rota: 'lote' } });
 
       const response = await api.get('/mail');
@@ -59,12 +63,12 @@ function FormMail({ mail, setShow, setMails }) {
   return (
     <Container>
       <div className="content">
-        <h1>Mail</h1>
+        <h1>Enviar e-mail</h1>
         <br />
         <Form onSubmit={handleSubimit}>
           <Select
             name="newsId"
-            placeholder=" Selecione um Informatívo para enviar"
+            placeholder=" Selecione um Informatívo"
             options={news}
           />
 
@@ -75,7 +79,7 @@ function FormMail({ mail, setShow, setMails }) {
           <br />
 
           <button className="button-gravar" type="submit">
-            <p>GRAVAR</p>
+            <p>ENVIAR E-MAILS</p>
           </button>
 
           <button

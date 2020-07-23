@@ -73,7 +73,7 @@ function Users() {
           value={arg}
         />
         <button type="button" onClick={() => newRegister()}>
-          <MdAdd size={40} color="#007641" />
+          <MdAdd size={40} color="#3ba779" />
         </button>
       </Painel>
       <Content>
@@ -91,13 +91,13 @@ function Users() {
                 </td>
                 <td>
                   <button type="button" onClick={() => editRegister(item)}>
-                    <MdEdit size={15} color="#333" />
+                    <MdEdit size={15} color="#3ba779" />
                   </button>
                   <button
                     type="button"
                     onClick={() => deleteRegister(item._id)}
                   >
-                    <MdDelete size={15} color="#333" />
+                    <MdDelete size={15} color="#3ba779" />
                   </button>
                 </td>
               </tr>
@@ -109,11 +109,11 @@ function Users() {
 
       <div className="page">
         <button type="button" onClick={() => setPage(page - 1)}>
-          <MdFirstPage size={30} color="#525252" />
+          <MdFirstPage size={30} color="#3ba779" />
         </button>
         <p>{page}</p>
         <button type="button" onClick={() => setPage(page + 1)}>
-          <MdLastPage size={30} color="#525252" />
+          <MdLastPage size={30} color="#3ba779" />
         </button>
       </div>
     </Container>

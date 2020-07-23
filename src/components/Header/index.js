@@ -1,16 +1,33 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import Logo from '../../assets/logoini.svg';
 import { MdReorder } from 'react-icons/md';
+import Logo from '../../assets/logoini.svg';
 
 import NavBar from './NavBar/index';
 import SocialBar from '../SocialBar/index';
 
-import { Container, Content, ContentSocial, Menu, ItemMenu, Button, ImgMenu, Img } from './styles';
+import {
+  Container,
+  Content,
+  ContentSocial,
+  Menu,
+  ItemMenu,
+  Button,
+  ImgMenu,
+  Img,
+} from './styles';
 
 function Header() {
-  const menu = ['HOME', 'QUEM SOMOS', 'AREAS DE ATUAÇÃO', 'NOSSOS PRINCÍPIOS', 'NOTÍCIAS', 'RESPONSABILIDADE SOCIAL', 'CONTATO'];
+  const menu = [
+    'HOME',
+    'QUEM SOMOS',
+    'AREAS DE ATUAÇÃO',
+    'NOSSOS PRINCÍPIOS',
+    'INFORMATIVOS',
+    'RESPONSABILIDADE SOCIAL',
+    'CONTATO',
+  ];
 
   const [visible, setVisible] = useState(false);
 
@@ -36,30 +53,40 @@ function Header() {
 
         <Menu>
           <ul>
-            {menu.map(item => (
+            {menu.map((item) => (
               <ItemMenu>
-                <Link to={
-                  item === 'HOME' ? "/" :
-                    item === 'QUEM SOMOS' ? "/about" :
-                      item === 'CONTATO' ? "/contact" :
-                        item === 'NOSSA EQUIPE' ? "/team" :
-                          item === 'AREAS DE ATUAÇÃO' ? "/area" :
-                            item === 'NOSSOS PRINCÍPIOS' ? "/principle" :
-                              item === 'NOTÍCIAS' ? "/" :
-                                item === 'RESPONSABILIDADE SOCIAL' ? "/social" : item
-                }>
+                <Link
+                  to={
+                    item === 'HOME'
+                      ? '/'
+                      : item === 'QUEM SOMOS'
+                        ? '/about'
+                        : item === 'CONTATO'
+                          ? '/contact'
+                          : item === 'NOSSA EQUIPE'
+                            ? '/team'
+                            : item === 'AREAS DE ATUAÇÃO'
+                              ? '/area'
+                              : item === 'NOSSOS PRINCÍPIOS'
+                                ? '/principle'
+                                : item === 'INFORMATIVOS'
+                                  ? '/info'
+                                  : item === 'RESPONSABILIDADE SOCIAL'
+                                    ? '/social'
+                                    : item
+                  }
+                >
                   <strong>{item}</strong>
                 </Link>
-                <div class="bar-animation"></div>
+                <div className="bar-animation" />
               </ItemMenu>
-            ))
-            }
-          </ul >
-        </Menu >
+            ))}
+          </ul>
+        </Menu>
 
         {visible ? <NavBar itemsMenu={menu} setShow={setVisible} /> : null}
-      </Content >
-    </Container >
+      </Content>
+    </Container>
   );
 }
 

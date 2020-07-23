@@ -37,7 +37,7 @@ function Mails() {
     loadReg();
   }, [page, arg]);
 
-  async function editRegister(data) {
+  async function showRegister(data) {
     setMail(data);
     setShow(true);
   }
@@ -54,38 +54,51 @@ function Mails() {
   return (
     <Container>
       <Painel>
-        <h1> E-mails</h1>
+        <h1> Envios de e-mails</h1>
 
         <button type="button" onClick={() => newRegister()}>
-          <MdAdd size={40} color="#007641" />
+          <MdAdd size={40} color="#3ba779" />
         </button>
       </Painel>
       <Content>
         <Table>
           <thead>
             <tr>
-              <th>Edição</th>
-              <th>Título</th>
-              <th>Autor</th>
-              <th>Data</th>
+              <th className="tam1">Edição</th>
+              <th className="tam3">Título</th>
+              <th className="tam2">Autor</th>
+              <th className="tam1">Data</th>
               <th />
             </tr>
           </thead>
           <tbody>
             {mails.map((item) => (
               <tr>
-                <strong>{item.news.edition}</strong>
-                <strong>{item.news.title}</strong>
-                <strong>{item.news.author}</strong>
-                <strong>
-                  {format(parseISO(item.mail.createdAt), "d'/'MM'/'yyyy", {
-                    locale: pt,
-                  })}
-                </strong>
+                <td className="tam1">
+                  <strong>{item.news.edition}</strong>
+                </td>
 
-                <button type="button" onClick={() => editRegister(item)}>
-                  <MdOpenInNew size={15} color="#333" />
-                </button>
+                <td className="tam3">
+                  <strong>{item.news.title}</strong>
+                </td>
+
+                <td className="tam2">
+                  <strong>{item.news.author}</strong>
+                </td>
+
+                <td className="tam1">
+                  <strong>
+                    {format(parseISO(item.mail.createdAt), "d'/'MM'/'yyyy", {
+                      locale: pt,
+                    })}
+                  </strong>
+                </td>
+
+                <td>
+                  <button type="button" onClick={() => { }}>
+                    <MdOpenInNew size={15} color="#3ba779" />
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>
@@ -95,11 +108,11 @@ function Mails() {
 
       <div className="page">
         <button type="button" onClick={() => setPage(page - 1)}>
-          <MdFirstPage size={30} color="#525252" />
+          <MdFirstPage size={30} color="#3ba779" />
         </button>
         <p>{page}</p>
         <button type="button" onClick={() => setPage(page + 1)}>
-          <MdLastPage size={30} color="#525252" />
+          <MdLastPage size={30} color="#3ba779" />
         </button>
       </div>
     </Container>

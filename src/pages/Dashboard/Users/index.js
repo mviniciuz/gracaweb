@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import { toast } from 'react-toastify';
+
 import {
   MdDelete,
   MdAdd,
@@ -43,9 +45,13 @@ function Users() {
   }, [page, arg]);
 
   async function deleteRegister(id) {
-    await api.delete(`/users/${id}`);
-    const response = await api.get('/users');
-    setUsers(response.data);
+    try {
+      await api.delete(`/users/${id}`);
+      const response = await api.get('/users');
+      setUsers(response.data);
+    } catch (err) {
+      toast.error(`${err.response.data.erro}`);
+    }
   }
 
   async function editRegister(data) {
@@ -75,44 +81,44 @@ function Users() {
           value={arg}
         />
         <button type="button" onClick={() => newRegister()}>
-          <MdAdd size={40} color="#007641" />
+          <MdAdd size={40} color="#3ba779" />
         </button>
       </Painel>
       <Content>
         <Table>
           <thead>
             <tr>
-              <th>Id</th>
-              <th>Nome</th>
-              <th>E-mail</th>
-              <th>Admin</th>
+              <th className="tam1">Id</th>
+              <th className="tam2">Nome</th>
+              <th className="tam2">E-mail</th>
+              <th className="tam1">Admin</th>
               <th />
             </tr>
           </thead>
           <tbody>
             {users.map((item) => (
               <tr>
-                <td>
+                <td className="tam1">
                   <strong>{item.document}</strong>
                 </td>
-                <td>
+                <td className="tam2">
                   <strong>{item.name}</strong>
                 </td>
-                <td>
+                <td className="tam2">
                   <strong>{item.email}</strong>
                 </td>
-                <td>
+                <td className="tam1">
                   <strong>{item.admin ? 'Sim' : 'Não'}</strong>
                 </td>
                 <td>
                   <button type="button" onClick={() => editRegister(item)}>
-                    <MdEdit size={15} color="#333" />
+                    <MdEdit size={15} color="#3ba779" />
                   </button>
                   <button
                     type="button"
                     onClick={() => deleteRegister(item._id)}
                   >
-                    <MdDelete size={15} color="#333" />
+                    <MdDelete size={15} color="#3ba779" />
                   </button>
                 </td>
               </tr>
@@ -123,11 +129,11 @@ function Users() {
       {show && <FormUser user={user} setShow={setShow} setUsers={setUsers} />}
       <div className="page">
         <button type="button" onClick={() => setPage(page - 1)}>
-          <MdFirstPage size={30} color="#525252" />
+          <MdFirstPage size={30} color="#3ba779" />
         </button>
         <p>{page}</p>
         <button type="button" onClick={() => setPage(page + 1)}>
-          <MdLastPage size={30} color="#525252" />
+          <MdLastPage size={30} color="#3ba779" />
         </button>
       </div>
     </Container>
