@@ -25,6 +25,7 @@ function Header() {
     'AREAS DE ATUAÇÃO',
     'NOSSOS PRINCÍPIOS',
     'INFORMATIVOS',
+    'NOTÍCIAS',
     'RESPONSABILIDADE SOCIAL',
     'CONTATO',
   ];
@@ -71,9 +72,11 @@ function Header() {
                                 ? '/principle'
                                 : item === 'INFORMATIVOS'
                                   ? '/info'
-                                  : item === 'RESPONSABILIDADE SOCIAL'
-                                    ? '/social'
-                                    : item
+                                  : item === 'NOTÍCIAS'
+                                    ? '/notices'
+                                    : item === 'RESPONSABILIDADE SOCIAL'
+                                      ? '/social'
+                                      : item
                   }
                 >
                   <strong>{item}</strong>

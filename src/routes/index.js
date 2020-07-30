@@ -18,6 +18,7 @@ import Area from '../pages/Areas';
 import Principle from '../pages/Principle';
 import Social from '../pages/Social';
 import Informatives from '../pages/Informatives';
+import Notices from '../pages/Notices';
 
 export default function Routes() {
   return (
@@ -29,6 +30,7 @@ export default function Routes() {
       <Route path="/area" component={Area} />
       <Route path="/principle" component={Principle} />
       <Route path="/info" component={Informatives} />
+      <Route path="/notices" component={Notices} />
       <Route path="/social" component={Social} />
 
       <Route path="/signin" component={SignIn} isSignin />

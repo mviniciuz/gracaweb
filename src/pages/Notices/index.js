@@ -1,28 +1,27 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 import { MdFirstPage, MdLastPage } from 'react-icons/md';
 
 import { format, parseISO } from 'date-fns';
 import pt from 'date-fns/locale/pt';
 
-import Informative from './informative';
+import Notice from './Notice';
 
 import { Container } from './styles';
 
 import api from '../../services/api';
 
-function Informatives() {
-  const [infos, setInfos] = useState([]);
-  const [info, setInfo] = useState();
+function Notices() {
+  const [notices, setNotices] = useState([]);
+  const [notice, setNotice] = useState();
   const [page, setPage] = useState(1);
 
   useEffect(() => {
     async function loadReg() {
       const response = await api.get('/news', {
-        params: { page, limits: 6, onlyActive: true, type: 'I' },
+        params: { page, limits: 6, onlyActive: true, type: 'N' },
       });
-      setInfos(response.data);
+      setNotices(response.data);
     }
     loadReg();
   }, []);
@@ -33,24 +32,24 @@ function Informatives() {
     }
     async function loadReg() {
       const response = await api.get('/news', {
-        params: { page, limits: 6, onlyActive: true, type: 'I' },
+        params: { page, limits: 6, onlyActive: true, type: 'N' },
       });
       if (!response.data.length) {
         if (page > 1) {
           setPage(page - 1);
         }
       }
-      setInfos(response.data);
+      setNotices(response.data);
     }
     loadReg();
   }, [page]);
 
   return (
     <Container>
-      <h1>INFORMATIVOS</h1>
+      <h1>NOTÍCIAS</h1>
       <div className="grid">
-        {infos.map((item) => (
-          <div className="item" onClick={() => setInfo(item)}>
+        {notices.map((item) => (
+          <div className="item" onClick={() => setNotice(item)}>
             <div className="item-header">
               <div className="item-header-date">
                 <p>
@@ -87,9 +86,9 @@ function Informatives() {
         </button>
       </div>
 
-      {info && <Informative info={info} setInfo={setInfo} />}
+      {notice && <Notice notice={notice} setNotice={setNotice} />}
     </Container>
   );
 }
 
-export default Informatives;
+export default Notices;

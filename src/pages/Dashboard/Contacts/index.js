@@ -37,6 +37,11 @@ function Contact() {
     }
     async function loadReg() {
       const response = await api.get('/contact', { params: { page, arg } });
+      if (!response.data.length) {
+        if (page > 1) {
+          setPage(page - 1);
+        }
+      }
       setContacts(response.data);
     }
     loadReg();

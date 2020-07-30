@@ -32,6 +32,11 @@ function Mails() {
     }
     async function loadReg() {
       const response = await api.get('/mail', { params: { page, arg } });
+      if (!response.data.length) {
+        if (page > 1) {
+          setPage(page - 1);
+        }
+      }
       setMails(response.data);
     }
     loadReg();

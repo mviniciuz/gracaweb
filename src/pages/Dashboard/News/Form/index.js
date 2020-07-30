@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Input, Select } from '@rocketseat/unform';
 
+import draftToMarkdown from 'draftjs-to-markdown';
+
 import draftToHtml from 'draftjs-to-html';
 import htmlToDraft from 'html-to-draftjs';
 
 import { EditorState, convertToRaw, ContentState } from 'draft-js';
+
 import { Editor } from 'react-draft-wysiwyg';
 import '.../../.././node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
@@ -42,34 +45,40 @@ function FormNews({ news, setShow, setNewsList }) {
   }, []);
 
   async function handleSubimit(data) {
+    const paragraf = convertToRaw(editorState.getCurrentContent()).blocks;
+
+    let labelText = '';
+    for (let i = 0; i < paragraf.length; i++) {
+      const element = paragraf[i];
+      if (element.text) {
+        labelText = element.text;
+        break;
+      }
+    }
+
+    data = {
+      ...data,
+      body: Buffer.from(
+        draftToHtml(convertToRaw(editorState.getCurrentContent())),
+        'utf-8'
+      )
+        .toString('base64')
+        .replace('&nbsp', ''),
+      textLabel: Buffer.from(labelText, 'utf-8').toString('base64'),
+    };
+
     try {
       if (!news) {
-        data = {
-          ...data,
-          body: Buffer.from(
-            draftToHtml(convertToRaw(editorState.getCurrentContent())),
-            'utf-8'
-          ).toString('base64'),
-        };
         await api.post('/news', data);
         const response = await api.get('/news');
         setNewsList(response.data);
       }
       if (news) {
-        data = {
-          ...data,
-          body: Buffer.from(
-            draftToHtml(convertToRaw(editorState.getCurrentContent())),
-            'utf-8'
-          ).toString('base64'),
-        };
-
         await api.put(`/news/${news._id}`, data);
         const response = await api.get('/news');
         setNewsList(response.data);
       }
     } catch (err) {
-      console.tron.log(err.response);
       toast.error(`${err.response.data.erro}`);
       return;
     }

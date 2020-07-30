@@ -39,6 +39,11 @@ function Users() {
     }
     async function loadReg() {
       const response = await api.get('/news', { params: { page, arg } });
+      if (!response.data.length) {
+        if (page > 1) {
+          setPage(page - 1);
+        }
+      }
       setNewsList(response.data);
     }
     loadReg();

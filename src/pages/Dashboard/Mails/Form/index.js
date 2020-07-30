@@ -13,11 +13,12 @@ import api from '../../../../services/api';
 function FormMail({ mail, setShow, setMails }) {
   const [news, setNews] = useState([]);
   const [tags, setTags] = useState([]);
-  const [showRegister, setShowRegister] = useState(false);
 
   useEffect(() => {
     async function loadReg() {
-      const response = await api.get('/news');
+      const response = await api.get('/news', {
+        params: { limits: 6, type: 'I' },
+      });
       const newArray = response.data.map((item) => ({
         id: item._id,
         title: `    ${item.edition} - ${item.title} - ${item.author}       `,

@@ -39,6 +39,11 @@ function Users() {
     console.tron.log(arg);
     async function loadReg() {
       const response = await api.get('/users', { params: { page, arg } });
+      if (!response.data.length) {
+        if (page > 1) {
+          setPage(page - 1);
+        }
+      }
       setUsers(response.data);
     }
     loadReg();
