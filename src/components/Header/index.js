@@ -71,7 +71,7 @@ function Header() {
                               : item === 'NOSSOS PRINCÍPIOS'
                                 ? '/principle'
                                 : item === 'INFORMATIVOS'
-                                  ? '/info'
+                                  ? '/informatives'
                                   : item === 'NOTÍCIAS'
                                     ? '/notices'
                                     : item === 'RESPONSABILIDADE SOCIAL'

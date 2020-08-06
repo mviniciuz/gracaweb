@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import { MdFirstPage, MdLastPage } from 'react-icons/md';
 
 import { format, parseISO } from 'date-fns';
 import pt from 'date-fns/locale/pt';
-
-import Informative from './informative';
+import BoxContact from '../../components/BoxContact';
 
 import { Container } from './styles';
 
@@ -14,8 +13,9 @@ import api from '../../services/api';
 
 function Informatives() {
   const [infos, setInfos] = useState([]);
-  const [info, setInfo] = useState();
   const [page, setPage] = useState(1);
+
+  const history = useHistory();
 
   useEffect(() => {
     async function loadReg() {
@@ -50,7 +50,10 @@ function Informatives() {
       <h1>INFORMATIVOS</h1>
       <div className="grid">
         {infos.map((item) => (
-          <div className="item" onClick={() => setInfo(item)}>
+          <div
+            className="item"
+            onClick={() => history.push(`/informative/${item._id}`)}
+          >
             <div className="item-header">
               <div className="item-header-date">
                 <p>
@@ -86,8 +89,7 @@ function Informatives() {
           <MdLastPage size={30} color="#3ba779" />
         </button>
       </div>
-
-      {info && <Informative info={info} setInfo={setInfo} />}
+      <BoxContact />
     </Container>
   );
 }

@@ -2,6 +2,11 @@ import styled from 'styled-components';
 
 import imgRet from '../../assets/info/ret-info.svg';
 
+const media = {
+  tablet: '@media(max-width: 1070px)',
+  phone: '@media(max-width: 600px)',
+};
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -9,7 +14,6 @@ export const Container = styled.div`
   align-items: center;
 
   padding-top: 40px;
-  padding-bottom: 20px;
 
   h1 {
     font-size: 1.8rem;
@@ -26,6 +30,14 @@ export const Container = styled.div`
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 40vh 40vh;
     grid-gap: 12px;
+
+    ${media.tablet} {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    ${media.phone} {
+      grid-template-columns: 1fr;
+    }
   }
 
   .item {

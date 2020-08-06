@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import { MdFirstPage, MdLastPage } from 'react-icons/md';
 
 import { format, parseISO } from 'date-fns';
 import pt from 'date-fns/locale/pt';
-
-import Notice from './Notice';
+import BoxContact from '../../components/BoxContact';
 
 import { Container } from './styles';
 
@@ -13,8 +13,8 @@ import api from '../../services/api';
 
 function Notices() {
   const [notices, setNotices] = useState([]);
-  const [notice, setNotice] = useState();
   const [page, setPage] = useState(1);
+  const history = useHistory();
 
   useEffect(() => {
     async function loadReg() {
@@ -49,7 +49,10 @@ function Notices() {
       <h1>NOTÍCIAS</h1>
       <div className="grid">
         {notices.map((item) => (
-          <div className="item" onClick={() => setNotice(item)}>
+          <div
+            className="item"
+            onClick={() => history.push(`/notice/${item._id}`)}
+          >
             <div className="item-header">
               <div className="item-header-date">
                 <p>
@@ -85,8 +88,7 @@ function Notices() {
           <MdLastPage size={30} color="#3ba779" />
         </button>
       </div>
-
-      {notice && <Notice notice={notice} setNotice={setNotice} />}
+      <BoxContact />
     </Container>
   );
 }

@@ -28,7 +28,7 @@ function NavBar({ itemsMenu, setShow }) {
                           : item === 'NOSSOS PRINCÍPIOS'
                             ? '/principle'
                             : item === 'INFORMATIVOS'
-                              ? '/info'
+                              ? '/informatives'
                               : item === 'NOTÍCIAS'
                                 ? '/notices'
                                 : item === 'RESPONSABILIDADE SOCIAL'

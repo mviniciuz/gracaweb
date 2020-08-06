@@ -1,15 +1,14 @@
 import styled from 'styled-components';
 
 const media = {
-  desktop: '@media(max-width: 900px)'
-}
+  desktop: '@media(max-width: 900px)',
+};
 
 export const Container = styled.div`
-
-  flex:1;
+  flex: 1;
   display: flex;
   flex-direction: row;
-  justify-content:flex-start;
+  justify-content: flex-start;
   align-items: center;
 
   height: 35px;
@@ -28,5 +27,4 @@ export const Container = styled.div`
       width: 28px;
     }
   }
-
 `;

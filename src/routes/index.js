@@ -19,6 +19,7 @@ import Principle from '../pages/Principle';
 import Social from '../pages/Social';
 import Informatives from '../pages/Informatives';
 import Notices from '../pages/Notices';
+import Details from '../pages/Details';
 
 export default function Routes() {
   return (
@@ -29,10 +30,11 @@ export default function Routes() {
       <Route path="/team" component={Team} />
       <Route path="/area" component={Area} />
       <Route path="/principle" component={Principle} />
-      <Route path="/info" component={Informatives} />
+      <Route path="/informatives" component={Informatives} />
+      <Route path="/informative/:id" component={Details} />
       <Route path="/notices" component={Notices} />
+      <Route path="/notice/:id" component={Details} />
       <Route path="/social" component={Social} />
-
       <Route path="/signin" component={SignIn} isSignin />
 
       <Route path="/dashboard" component={Dashboard} isPrivate isDash />
