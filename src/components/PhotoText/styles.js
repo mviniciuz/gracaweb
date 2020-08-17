@@ -1,18 +1,16 @@
 import styled from 'styled-components';
 
-import Moldura from '../../assets/photoText/moldura.svg';
-
 const media = {
-  desktop: '@media(max-width: 900px)'
-}
+  desktop: '@media(max-width: 900px)',
+};
 
 export const Container = styled.div`
   flex: 1;
   display: flex;
-  flex-direction: ${props => (props.firstPhoto ? 'row' : 'row-reverse')};
+  flex-direction: ${(props) => (props.firstPhoto ? 'row' : 'row-reverse')};
   justify-content: center;
   align-items: center;
-  height: ${props => (props.tamHeight ? props.tamHeight : '100vh')};
+  height: ${(props) => (props.tamHeight ? props.tamHeight : '100vh')};
   width: 100%;
 
   ${media.desktop} {
@@ -21,19 +19,19 @@ export const Container = styled.div`
     width: 100vw;
   }
 
-  background-color: ${props => props.color};
+  background-color: ${(props) => props.color};
 
   .photo {
     display: flex;
     flex: 1;
     flex-direction: column;
     justify-content: center;
-    align-items: ${props => (props.firstPhoto ? 'flex-end' : 'flex-start')};
+    align-items: ${(props) => (props.firstPhoto ? 'flex-end' : 'flex-start')};
 
-    height: ${props => (props.tamHeight ? props.tamHeight : '100vh')};
+    height: ${(props) => (props.tamHeight ? props.tamHeight : '100vh')};
     background: transparent;
 
-    ${media.desktop}{
+    ${media.desktop} {
       align-items: center;
     }
 
@@ -41,7 +39,7 @@ export const Container = styled.div`
       height: auto;
       width: 65%;
 
-      ${media.desktop}{
+      ${media.desktop} {
         width: 60%;
       }
     }
@@ -54,16 +52,16 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
 
-    height: ${props => (props.tamHeight ? props.tamHeight : '100vh')};
+    height: ${(props) => (props.tamHeight ? props.tamHeight : '100vh')};
     background: transparent;
 
     h1 {
       text-align: left;
-      font-size: 2.0rem;
+      font-size: 2rem;
       color: #202020;
-      padding-left: ${props => (props.firstPhoto ? '5%' : '35%')};
-      padding-right: ${props => (props.firstPhoto ? '35%' : '5%')};
-      ${media.desktop}{
+      padding-left: ${(props) => (props.firstPhoto ? '5%' : '35%')};
+      padding-right: ${(props) => (props.firstPhoto ? '35%' : '5%')};
+      ${media.desktop} {
         padding-left: 5%;
         padding-right: 5%;
       }
@@ -74,18 +72,16 @@ export const Container = styled.div`
       font-size: 0.9rem;
       color: #202020;
 
-      line-height:1.3em;
+      line-height: 1.3em;
 
       padding-top: 20px;
-      padding-left: ${props => (props.firstPhoto ? '5%' : '35%')};
-      padding-right: ${props => (props.firstPhoto ? '35%' : '5%')};
-      ${media.desktop}{
+      padding-left: ${(props) => (props.firstPhoto ? '5%' : '35%')};
+      padding-right: ${(props) => (props.firstPhoto ? '35%' : '5%')};
+      ${media.desktop} {
         font-size: 0.8rem;
         padding-left: 5%;
         padding-right: 5%;
       }
     }
   }
-
 `;
-

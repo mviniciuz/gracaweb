@@ -38,6 +38,7 @@ export default function Home() {
     p6: 'DIREITO PENAL',
     p7: 'DIREITO TRABALHISTA',
     p8: 'DIREITO TRIBUTÁRIO',
+    p9: 'MEDIAÇÃO E ARBITRAGEM',
   };
 
   return (

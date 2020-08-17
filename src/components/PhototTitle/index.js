@@ -1,14 +1,11 @@
 import React from 'react';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
 
 import { Container } from './styles';
 
 function PhotoText({ title, text, photo, inverse, color, tamHeight }) {
-
   return (
     <Container firstPhoto={!inverse} color={color} tamHeight={tamHeight}>
-
       <div className="photo">
         <img src={photo} />
       </div>
@@ -23,7 +20,7 @@ function PhotoText({ title, text, photo, inverse, color, tamHeight }) {
               <p>{text.p1 ? text.p1 : ''}</p>
             </a>
           </div>
-          <div className="title" >
+          <div className="title">
             <AiOutlinePlusCircle size={25} color="#4C6158" />
             <a href="/area#civil" target="_parent">
               <p>{text.p2 ? text.p2 : ''}</p>
@@ -65,13 +62,16 @@ function PhotoText({ title, text, photo, inverse, color, tamHeight }) {
               <p>{text.p8 ? text.p8 : ''}</p>
             </a>
           </div>
+          <div className="title">
+            <AiOutlinePlusCircle size={25} color="#4C6158" />
+            <a href="/area#mediacao" target="_parent">
+              <p>{text.p9 ? text.p9 : ''}</p>
+            </a>
+          </div>
         </div>
       </div>
-
-    </Container >
-
+    </Container>
   );
 }
-
 
 export default PhotoText;

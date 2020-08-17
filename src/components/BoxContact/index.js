@@ -19,6 +19,11 @@ const schema = Yup.object().shape({
 function BoxContact() {
   async function handleSubimit(data, { resetForm }) {
     try {
+      data = {
+        ...data,
+        status: true,
+      };
+
       const response = await api.post('/contact', data);
       toast.success('Contato Cadastrado com Sucesso');
 

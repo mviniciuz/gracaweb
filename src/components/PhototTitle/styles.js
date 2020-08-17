@@ -3,22 +3,23 @@ import styled from 'styled-components';
 import Moldura from '../../assets/photoText/moldura.svg';
 
 const media = {
-  desktop: '@media(max-width: 900px)'
-}
+  desktop: '@media(max-width: 900px)',
+};
 
 export const Container = styled.div`
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: ${props => (props.tamHeight ? props.tamHeight : '100vh')};
+  height: ${(props) => (props.tamHeight ? props.tamHeight : '100vh')};
   width: 100%;
-  background-color: ${props => props.color};
+  background-color: ${(props) => props.color};
 
-  flex-direction: ${props => (props.firstPhoto ? 'row' : 'row-reverse')};
+  flex-direction: ${(props) => (props.firstPhoto ? 'row' : 'row-reverse')};
   ${media.desktop} {
     height: 100vh;
-    flex-direction: ${props => (props.firstPhoto ? 'column' : 'column-reverse')};
+    flex-direction: ${(props) =>
+    props.firstPhoto ? 'column' : 'column-reverse'};
   }
 
   .photo {
@@ -26,13 +27,12 @@ export const Container = styled.div`
     flex: 1;
     flex-direction: column;
     justify-content: center;
-    align-items: ${props => (props.firstPhoto ? 'flex-end' : 'flex-start')};
+    align-items: ${(props) => (props.firstPhoto ? 'flex-end' : 'flex-start')};
 
-    height: ${props => (props.tamHeight ? props.tamHeight : '100vh')};
+    height: ${(props) => (props.tamHeight ? props.tamHeight : '100vh')};
     background: transparent;
 
-    ${media.desktop}{
-
+    ${media.desktop} {
       align-items: center;
       height: 100%;
       width: 100vw;
@@ -53,13 +53,13 @@ export const Container = styled.div`
 
     align-self: flex-start;
 
-    height: ${props => (props.tamHeight ? props.tamHeight : '100vh')};
+    height: ${(props) => (props.tamHeight ? props.tamHeight : '100vh')};
 
     h1 {
       padding-top: 30px;
       padding-bottom: 20px;
       text-align: left;
-      font-size: 2.0rem;
+      font-size: 2rem;
       color: #202020;
       min-width: 300px;
     }
@@ -67,17 +67,16 @@ export const Container = styled.div`
     p {
       text-align: left;
       font-size: 0.8rem;
-      color: #4C6158;
+      color: #4c6158;
       font-weight: bold;
       padding-left: 10px;
-
     }
   }
 
   .title {
     background-color: transparent;
     display: flex;
-    flex:1;
+    flex: 1;
 
     flex-direction: row;
     justify-content: flex-start;
@@ -85,11 +84,9 @@ export const Container = styled.div`
 
     height: 35px;
     min-width: 300px;
-
   }
   .box-text {
     padding-left: 30%;
     padding-bottom: 30px;
   }
 `;
-
