@@ -92,15 +92,16 @@ function FormNews({ news, setShow, setNewsList }) {
   return (
     <Container>
       <div className="content">
-        <h1>Detelhes Informativo</h1>
+        <h1>Detelhes do documento</h1>
 
         <Form schema={schema} initialData={news} onSubmit={handleSubimit}>
           <Select
             name="type"
-            placeholder="Informativo ou Notícias"
+            placeholder="Tipo do documento"
             options={[
               { id: 'I', title: 'Informativo' },
               { id: 'N', title: 'Notícia' },
+              { id: 'E', title: 'Envio de email' },
             ]}
           />
           <Input name="title" type="text" placeholder="* Título" />

@@ -76,7 +76,7 @@ function Users() {
   return (
     <Container>
       <Painel>
-        <h1> Informativos</h1>
+        <h1> Documentos</h1>
 
         <input
           name="search"
@@ -119,7 +119,11 @@ function Users() {
                 </td>
                 <td className="tam1">
                   <strong>
-                    {item.type === 'I' ? 'Informativo' : 'Notícia'}
+                    {item.type === 'I'
+                      ? 'Informativo'
+                      : item.type === 'N'
+                        ? 'Notícias'
+                        : 'Envio de Mail'}
                   </strong>
                 </td>
                 <td className="tam1">

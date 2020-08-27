@@ -14,7 +14,7 @@ function SideMenu() {
 
       <Link to="/news">
         <button type="submit">
-          <strong>Informativos</strong>
+          <strong>Documentos</strong>
         </button>
       </Link>
       <Link to="/mail">

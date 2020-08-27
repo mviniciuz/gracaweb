@@ -4,8 +4,6 @@ import { Form, Choice, Select } from '@rocketseat/unform';
 import { toast } from 'react-toastify';
 import * as Yup from 'yup';
 
-import Show from './Show';
-
 import { Container } from './styles';
 
 import api from '../../../../services/api';
@@ -17,7 +15,7 @@ function FormMail({ mail, setShow, setMails }) {
   useEffect(() => {
     async function loadReg() {
       const response = await api.get('/news', {
-        params: { limits: 6, type: 'I' },
+        params: { limits: 6, type: 'IE' },
       });
       const newArray = response.data.map((item) => ({
         id: item._id,
@@ -47,6 +45,7 @@ function FormMail({ mail, setShow, setMails }) {
   }, []);
 
   async function handleSubimit(data) {
+    console.tron.log(data);
     try {
       await api.post('/mail', data, { params: { rota: 'lote' } });
 
@@ -69,7 +68,7 @@ function FormMail({ mail, setShow, setMails }) {
         <Form onSubmit={handleSubimit}>
           <Select
             name="newsId"
-            placeholder=" Selecione um Informatívo"
+            placeholder=" Selecione um Documento"
             options={news}
           />
 
