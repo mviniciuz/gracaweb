@@ -14,24 +14,26 @@ const schema = Yup.object().shape({
 
 function FormTag({ tag, setShow, setTags }) {
   async function handleSubimit(data) {
-    try {
-      if (!tag) {
+    if (!tag) {
+      try {
         await api.post('/tag', data);
-
         const response = await api.get('/tag');
         setTags(response.data);
+      } catch (err) {
+        toast.error(`${err.response.data.erro}`);
+        return;
       }
-      if (tag) {
-        console.tron.log(data);
+    }
+    if (tag) {
+      try {
         await api.put(`/tag/${tag._id}`, data);
         const response = await api.get('/tag');
         setTags(response.data);
+      } catch (err) {
+        toast.error(`${err.response.data.erro}`);
+        return;
       }
-    } catch (err) {
-      toast.error(`${err.response.data.erro}`);
-      return;
     }
-
     setShow(false);
   }
 

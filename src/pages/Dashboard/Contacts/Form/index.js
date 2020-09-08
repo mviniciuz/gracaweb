@@ -24,7 +24,7 @@ function FormContact({ contact, setShow, setContacts }) {
       const response = await api.get('/tag');
 
       response.data.map((item) => {
-        setTags((prevTag) => [
+        return setTags((prevTag) => [
           ...prevTag,
           { value: item.tag, label: item.tag },
         ]);
@@ -34,9 +34,8 @@ function FormContact({ contact, setShow, setContacts }) {
   }, []);
 
   async function handleSubimit(data) {
-    try {
-      console.tron.log(data);
-      if (!contact) {
+    if (!contact) {
+      try {
         data = {
           ...data,
           status: true,
@@ -45,17 +44,21 @@ function FormContact({ contact, setShow, setContacts }) {
 
         const response = await api.get('/contact');
         setContacts(response.data);
+      } catch (err) {
+        toast.error(`${err.response.data.erro}`);
+        return;
       }
-      if (contact) {
+    }
+    if (contact) {
+      try {
         await api.put(`/contact/${contact._id}`, data);
         const response = await api.get('/contact');
         setContacts(response.data);
+      } catch (err) {
+        toast.error(`${err.response.data.erro}`);
+        return;
       }
-    } catch (err) {
-      toast.error(`${err.response.data.erro}`);
-      return;
     }
-
     setShow(false);
   }
 

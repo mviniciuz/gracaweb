@@ -45,14 +45,17 @@ function FormMail({ mail, setShow, setMails }) {
   }, []);
 
   async function handleSubimit(data) {
-    console.tron.log(data);
     try {
       await api.post('/mail', data, { params: { rota: 'lote' } });
+    } catch (err) {
+      toast.error(`${err.response.data.erro}`);
+      return;
+    }
 
+    try {
       const response = await api.get('/mail');
       setMails(response.data);
     } catch (err) {
-      console.tron.log(err.response);
       toast.error(`${err.response.data.erro}`);
       return;
     }

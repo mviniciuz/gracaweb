@@ -24,8 +24,6 @@ function Details() {
     loadReg();
   }, []);
 
-  console.tron.log(reg);
-
   return (
     <Container>
       <strong>Edição: {reg.edition} </strong>
