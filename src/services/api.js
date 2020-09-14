@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export default axios.create({
-  baseURL: 'https://167.172.238.228:3333',
+  baseURL: 'https://www.informa.adv.br/',
 });
 
 // baseURL: 'http://167.172.238.228:3333',
