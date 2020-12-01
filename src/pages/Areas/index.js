@@ -47,7 +47,7 @@ const text04 = {
 
 const text05 = {
   p1:
-    'Aplicação da norma e a regulação jurídica realizada no meio digital. Mapeamento e tratamento dos dados de pessoas físicas, funcionários, fornecedores e clientes. Treinamento de equipes e responsáveis. Revisão de instrumentos jurídicos, política de privacidade, termos de uso, etc. Implementação de soluções entendendo a necessidade de cada cliente. DPO - Encarregado de Dados. Selo de certificação de Implementação de Dados',
+    'Aplicação da norma e a regulação jurídica realizada no meio digital. Mapeamento e tratamento dos dados de pessoas físicas, funcionários, fornecedores e clientes. Treinamento de equipes e responsáveis. Revisão de instrumentos jurídicos, política de privacidade, termos de uso, etc. Implementação de soluções entendendo a necessidade de cada cliente.',
 };
 
 const text06 = {

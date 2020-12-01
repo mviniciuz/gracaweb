@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 const media = {
-  desktop: '@media(max-width: 900px)'
-}
+  desktop: '@media(max-width: 900px)',
+};
 
 export const Container = styled.div`
   display: flex;
-  flex:1;
+  flex: 1;
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
@@ -17,7 +17,7 @@ export const Container = styled.div`
 
   .content {
     display: flex;
-    flex:1;
+    flex: 1;
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -26,33 +26,33 @@ export const Container = styled.div`
       flex-direction: column;
     }
 
-    background-color: #E1E1E1;
+    background-color: #e1e1e1;
     padding-left: 10%;
     padding-right: 10%;
 
     .logo {
       display: flex;
-      flex:1;
+      flex: 1;
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
 
       img {
-        width: 75% ;
+        width: 75%;
         height: auto;
       }
     }
 
-    .contato{
+    .contato {
       display: flex;
-      flex:1;
+      flex: 1;
       flex-direction: column;
       justify-content: center;
       align-items: center;
 
-      ${media.desktop}{
+      ${media.desktop} {
         padding-top: 5%;
-        padding-left:10%;
+        padding-left: 10%;
       }
 
       .item {
@@ -62,8 +62,6 @@ export const Container = styled.div`
         justify-content: flex-start;
         align-items: center;
 
-
-
         width: 90%;
 
         min-width: 350px;
@@ -71,7 +69,7 @@ export const Container = styled.div`
 
         p {
           font-size: 0.8rem;
-          font-weight:bold;
+          font-weight: bold;
           color: #525252;
           padding-left: 10px;
         }
@@ -80,7 +78,7 @@ export const Container = styled.div`
 
     .selos {
       display: flex;
-      flex:1;
+      flex: 1;
       flex-direction: column;
       justify-content: center;
       align-items: center;
@@ -90,15 +88,14 @@ export const Container = styled.div`
       }
 
       img {
-        width: 40% ;
+        width: 60%;
         height: auto;
       }
     }
-
   }
 
   .final {
     height: 30px;
-    background-color: #568A74;
+    background-color: #568a74;
   }
 `;
