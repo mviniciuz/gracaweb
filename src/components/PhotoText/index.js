@@ -1,12 +1,15 @@
 import React from 'react';
 
-
 import { Container, Moldure } from './styles';
 
 function PhotoText({ title, text, photo, inverse, color, tamHeight, id }) {
-
   return (
-    <Container id={id} firstPhoto={!inverse} color={color} tamHeight={tamHeight}>
+    <Container
+      id={id}
+      firstPhoto={!inverse}
+      color={color}
+      tamHeight={tamHeight}
+    >
       <div className="photo">
         <img src={photo} />
       </div>
@@ -17,11 +20,12 @@ function PhotoText({ title, text, photo, inverse, color, tamHeight, id }) {
           <p>{text.p1 ? text.p1 : null}</p>
           <p>{text.p2 ? text.p2 : null}</p>
           <p>{text.p3 ? text.p3 : null}</p>
+          <p>{text.p4 ? text.p4 : null}</p>
+          <p>{text.p5 ? text.p5 : null}</p>
         </div>
       </div>
-    </Container >
+    </Container>
   );
 }
-
 
 export default PhotoText;

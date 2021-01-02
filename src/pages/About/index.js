@@ -62,17 +62,15 @@ function About() {
 
   const text03 = {
     p1:
-      'O Graça Advogados Associados foi eleito um dos escritórios de advocacia mais admirados do Brasil, ' +
-      'conforme o anuário Análise Advocacia 500 - 13ª edição 2018. Foram realizadas 1.064 entrevistas com os ' +
-      'executivos das  maiores companhias do país.',
+      'O Graça Advogados Associados foi eleito um dos escritórios de advocacia mais admirados do Brasil, conforme o anuário Análise Advocacia 500 - 13ª edição 2018. Foram realizadas 1.064 entrevistas com os executivos das maiores companhias do país. ',
     p2:
-      'Incluído neste seleto grupo, através das indicações recebidas na categoria de bancas abrangentes, o ' +
-      'Graça Advogados Associados ocupa a 4ª posição no Estado Paraná.',
+      'Incluído neste seleto grupo, através das indicações recebidas na categoria de bancas abrangentes, o Graça Advogados Associados ocupa a 4ª posição no Estado Paraná. ',
     p3:
-      'Pela 2ª vez consecutiva, o Graça Advogados Associados  entrou  no  ranking  do Anuário Análise Advocacia ' +
-      '500 – 14ª  edição 2019, como o 2º escritório mais admirado  do Paraná, o 5º mais  admirado na  especialidade ' +
-      'Consumidor, o 4º na especialidade Contratos empresariais, o 4º na especialidade Trabalhista e o 2º no setor' +
-      'econômico do comércio.',
+      'Em 2019, o Graça Advogados Associados entrou no ranking do Anuário Análise Advocacia 500 – 14ª edição 2019, como o 2º escritório mais admirado do Paraná, o 5º mais admirado na especialidade Consumidor, o 4º na especialidade Contratos empresariais, o 4º na especialidade Trabalhista e o 2º no setor econômico do comércio.',
+    p4:
+      'Pela 3ª vez consecutiva, o Graça Advogados Associados foi eleito, em oito categorias, como o escritório mais admirado de 2020 pelo Anuário Análise 500.',
+    p5:
+      ' 1º Lugar - Escritório mais admirado do Estado do  Paraná, 2º Lugar - Setor econômico / Comércio, 3º Lugar - Especialidade / Tributário, 3º Lugar - Especialidade / Consumidor, 5º Lugar - Especialidade / Contratos Empresariais, 4º Lugar - Especialidade / Digital, 4º Lugar - Especialidade / Imobiliário, 4º Lugar - Especialidade / Trabalhista.',
   };
 
   const text04 = {
